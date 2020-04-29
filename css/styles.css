@@ -12,7 +12,7 @@
 
   .container-hero { 
     width:inherit; 
-    position: relative; 
+    position: absolute; 
     display:inline-block; 
   }
 
@@ -154,17 +154,14 @@
 
   .social {
     display: inline-flex;
-    position: relative;
-    bottom: 40em;
-    z-index: 10;
+    position: absolute;
+    z-index: 1000;
   }
 
   .social-media {
-    width:60px;
-    height:60px;
+    width:6vw;
+    height:auto;
   }
-
-
 
   /* The flip box container - set the width and height to whatever you want. 
   We have added the border property to demonstrate that the flip itself goes 
