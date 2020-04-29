@@ -12,7 +12,7 @@
 
   .container-hero { 
     width:inherit; 
-    position: absolute; 
+    position: relative; 
     display:inline-block; 
   }
 
@@ -66,8 +66,10 @@
 }
 
 .bio p{
+  /* left: 5em; */
   text-align: left;
   font-size: 1.7vw;
+  font-weight: bold;
   line-height: 110%;
   margin-bottom: 2em;
   color: white;
@@ -130,9 +132,9 @@
     padding-top: .6rem;
   }
 
-  .contact-placeholder {
-    background-color: black;
-  } 
+  /* .contact-placeholder {
+    position: absolute;
+  } */
 
   .contact-video {
     position: relative;
@@ -140,7 +142,6 @@
     pointer-events: none;
     width: 100%;
     object-fit: cover;
-    z-index: 0;
   }
 
   .cpr {
