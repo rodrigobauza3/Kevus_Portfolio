@@ -10,6 +10,10 @@
   cursor: pointer;
   }
 
+  section {
+    max-width: 100%;
+  }
+
   .container-hero { 
     width:inherit; 
     position: relative; 
@@ -20,6 +24,7 @@
     pointer-events: none; 
     max-width: -webkit-fill-available; 
     width: 100%;
+    height: 100vh;
     object-fit: cover;
   }
 
@@ -137,11 +142,17 @@
   } */
 
   .contact-video {
-    position: relative;
+    /* position: relative;
     top: 7em;
     pointer-events: none;
-    width: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    object-fit: cover; */
+    position:absolute;
+    z-index:-1;
+    top:0;
+    left:0;
+    width:100%; 
+    height:100vh;
   }
 
   .cpr {
@@ -158,12 +169,12 @@
     display: inline-flex;
     position: absolute;
     z-index: 1000;
-    left: 33em;
-    bottom: 25em;
+    right: 12em;
+    top: 12em;
   }
 
   .social-media {
-    width:6vw;
+    width:6.11vw;
     height:auto;
   }
 
@@ -200,6 +211,6 @@
 
 /* Style the back side */
 .flip-box-back {
-  right: 8px;
+  /* right: 8px; */
   transform: rotateY(180deg);
 }
