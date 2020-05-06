@@ -157,14 +157,32 @@
     height:100vh;
   }
 
+  .footer-video {
+    pointer-events: none; 
+    max-width: -webkit-fill-available; 
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
   .cpr {
     position: absolute;
-    bottom: 6.32em;
-    left: 24.3em;
-    display: inline-flex;
+    bottom: 0em;
+    /* left: 24.3em; */
+    /* display: inline-flex; */
     color: white;
-    font-size: 1.3vw;
+    font-size: 1vw;
     background-color: rgba(214, 16, 97, 1);
+  }
+
+  .mailto {
+    /* position: absolute;
+    justify-content: center;
+    display: inline-flex;
+    top: 2em;
+    color: white;
+    /* font-size: 2.8vw;
+    background-color: rgba(214, 16, 97, 1); */
   }
 
   .social {
@@ -232,4 +250,74 @@
 
 .link4 {
   left: 6em;
+}
+
+@media (min-width: 320px) /*and (max-width: 450px) */{
+  .header-video {
+    /* height: 100%; */
+  }
+  .title {
+    position: relative;
+    top: 8em;
+    left: 0.3em;
+    font-size: 5vw;
+  }
+  .content-text {
+    top: 7em;
+    left: 4.1em;
+    font-size: 5vw;
+  }
+  .link {
+    font-size: 8vw;
+  }
+  .social-media {
+    width: 8vw;
+  }
+  .small, small {
+    font-size: 50%;
+  }
+  .cpr {
+    font-size: 2.5vw;
+  }
+  .mailto {
+    position: absolute;
+    justify-content: center;
+    display: inline-flex;
+    top:10em;
+    /* left: 18.65em; */
+    color: white;
+    background-color: rgba(214, 16, 97, 1);
+  }
+  .bio h2 {
+    font-size: 4vw;
+  }
+  .bio p {
+    font-size: 2.7vw;
+    margin-bottom: 0px;
+  }
+  #about .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #about .row {
+    padding-top: 10%;
+  }
+  .about-video {
+    pointer-events: none; 
+    max-width: -webkit-fill-available; 
+    width: 100%;
+    height: 49vh;
+    object-fit: cover;
+  }
+  .footer-video {
+    pointer-events: none; 
+    max-width: -webkit-fill-available; 
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 470px) /*and (max-width: 450px) */{
+  
 }
