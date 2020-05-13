@@ -4,14 +4,13 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Kevu Portfolio</title>
+  <title>Kevu Portfolio v2</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -19,7 +18,6 @@
   <link href="css/fonts/Nunito.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/grayscale.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
  
   <!-- JQuery -->
@@ -31,284 +29,130 @@
 
 <body id="page-top">
 <!-- Video Header -->
-<header class="masthead" style="background-image:url(img/bg-video-home.jpg)">
-  <div class="container-hero d-flex h-100">
-    <video class="header-video video-fluid z-depth-1" autoplay disablePictureInPicture loop muted> 
-      <source src="videos/bg-hero.mp4" type="video/mp4"/>
-    </video>
-    <div class="header-letters text-white">
-      <p class="title">&lt;/title&gt;</p>
-      <div class="content-text">
-        <a href="#projects" class="link">/"@a.</br>anevenua.dg"</a>
-        <p>ass= "CREATIVE DESIGNER</br>& DIGITAL ART" /&gt</p>
-      </div>
+<header class="v-header container">
+    <div class="fullscreen-video-wrap">
+        <video class="videoBg" poster="/img/bg-video-home.jpg" autoplay disablePictureInPicture loop muted> 
+            <source src="videos/bg-hero.mp4" type="video/mp4"/>
+        </video>
     </div>
-  </div>
+    <!-- <div class="header-overlay"></div> -->
+    <div class="header-content">
+        <p class="h-title">&lt;/title&gt;</p>
+        <p class="h-body"><a href="#projects" class="h-link">/"@a.</br>anevenua.dg"</a></br></br></br></br>ass= "CREATIVE DESIGNER</br>& DIGITAL ART"/&gt</p>      
+    </div>
 </header>
-  
-  <!-- About Section -->
-  <section id="about" class="about-section text-center">
+
+<section class="section section-about">
+  <div class="bio-video container">
+    <video class="video-fluid z-depth-1" autoplay loop muted> 
+        <source src="videos/bg-about.mp4" type="video/mp4"/>
+    </video>
+</div> 
     <div class="container">
-      <div class="about-banner col-lg-12 mx-auto">
-        <img src="img/banner iconos.png" alt="" class="banner-icons col-lg-12">
-      </div>
-      
-      <div class="row">
+        <div class="about-banner">
+            <img src="img/banner iconos.png" alt="" class="col-lg-12">
+        </div>
+        
         <div class="bio">         
           <h2>            
             NAME:_
           </h2>
-          <p>
-            Hey there! </br> 
-            I'm Agustin, a visual communication designer. </br>
-            I'm made to ideas into reallity. </br>
-            Message decoder and interpreter. </br>
-            Needs browser. Video/Image passionate. </br>
-            Sensory tester. Creative ways.
-            <br style="clear:both" />
-          </p>         
         </div>
-      </div>
-      <video class="about-video video-fluid z-depth-1" autoplay disablePictureInPicture loop muted> 
-        <source src="videos/bg-about.mp4" type="video/mp4"/>
-      </video>
-      <!-- <img src="img/ipad.png" class="img-fluid" alt=""> -->
+        <div class="bio-container">
+          <div class="bio-overlay"></div>
+            <p>
+                Hey there! </br> 
+                I'm Agustin, a visual communication designer. </br>
+                I'm made to ideas into reallity. </br>
+                Message decoder and interpreter. </br>
+                Needs browser. Video/Image passionate. </br>
+                Sensory tester. Creative ways.
+                <br/>
+              </p>
+        </div>
+        
     </div>
-  </section>
+    
+</section>
 
-  <!-- Projects Section -->
-  <div id="projects" class="container my-5 prod-des">
+<section class="section section-b">
+    <div class="container">
+        <h1>Section B</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse delectus similique odio possimus in necessitatibus aspernatur? Doloribus officia enim nostrum obcaecati, porro ullam explicabo eius perspiciatis, ratione minima quae, culpa consequuntur rerum possimus eveniet. Adipisci officia labore quisquam illo. Corporis esse quibusdam tempore consequuntur, et soluta tenetur suscipit? Ea, tempora?</p>
+    </div>
+</section>
+<footer>
+  <section>
+      <div class="v-footer container">
+          <div class="fullscreen-video-wrap">
+              <video class="videoBg-footer" autoplay loop muted> 
+                  <source src="videos/bg-contact.mp4" type="video/mp4"/>
+              </video>
+          </div>
+          <div class="contact-elements">
+            <div class="c-mail">a.anevenua@gmail.com</div>
 
-    <!-- Section -->
-    <section>      
-      <!-- Modal -->
-      <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-body p-0">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              
-              <!-- Grid row -->
-              <div class="row">
-              
-                <!-- Grid column -->
-                <div class="col-md-6 py-5 pl-5">
-                  
-                  <h5 class="font-weight-normal mb-3">Paper cup mockup</h5>
-  
-                  <p class="text-muted">Key letters, explain which writing we he carpeting or fame, the itch expand medical amped through constructing time. And scarfs, gain, get showed accounts decades.</p>
-  
-                  <ul class="list-unstyled font-small mt-5">
-                    <li>
-                      <p class="text-uppercase mb-2"><strong>Client</strong></p>
-                      <p class="text-muted mb-4">Envato Inc.</p>
-                    </li>
-  
-                    <li>
-                      <p class="text-uppercase mb-2"><strong>Date</strong></p>
-                      <p class="text-muted mb-4">June 27, 2019</p>
-                    </li>
-  
-                    <li>
-                      <p class="text-uppercase mb-2"><strong>Skills</strong></p>
-                      <p class="text-muted mb-4">Design, HTML, CSS, Javascript</p>
-                    </li>
-  
-                    <li>
-                      <p class="text-uppercase mb-2"><strong>Address</strong></p>
-                      <a href="https://mdbootstrap.com/docs/jquery/design-blocks/">MDBootstrap</a>
-                    </li>
-                  </ul>
-                  
-                </div>
-                <!-- Grid column -->
-              
-                <!-- Grid column -->
-                <div class="col-md-6">
-                  
-                  <div class="view rounded-right">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/5.jpg" alt="Sample image">
+            <div class="buttons">
+              <a href="https://www.behance.net/agustin_agustin">
+                <div class="flip3d">                
+                  <div class="front">
+                    <img src="img/icons/social-links/behance.png" class="social-media" alt="">
                   </div>
-                  
+                  <div class="back">
+                    <img src="img/icons/social-links/hovers/behance.png" class="social-media" alt="">
+                  </div>
                 </div>
-                <!-- Grid column -->
-              
-              </div>
-              <!-- Grid row -->
-              
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <!--<h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">portfolio</h6>-->
-      <h3 class="font-weight-bold text-center dark-grey-text pb-2 text-white">&lt;/galeria&gt;</h3>
-      <hr class="w-header my-4">
-      <p class="lead text-center text-muted pt-2 mb-5 text-white-50">You can find several product design by our professional team in this section.</p>
-  
-      <!-- Grid row -->
-      <div class="row">
-  
-        <!-- Grid column -->
-        <div class="col-md-12 dark-grey-text d-flex justify-content-center mb-5">
-  
-          <button type="button" class="btn btn-flat btn-lg m-0 px-3 py-1 text-white filter" data-rel="all">All</button>
-          <p class="font-weight-bold mb-0 px-1 py-1 text-white">/</p>
-          <button type="button" class="btn btn-flat btn-lg m-0 px-3 py-1 text-white filter" data-rel="1">Design</button>
-          <p class="font-weight-bold mb-0 px-1 py-1 text-white">/</p>
-          <button type="button" class="btn btn-flat btn-lg m-0 px-3 py-1 text-white filter" data-rel="2">Mockup</button>
-  
-        </div>
-        <!-- Grid column -->
-  
-      </div>
-      <!-- Grid row -->
-  
-      <!-- Grid row -->
-      <div class="gallery mb-5" id="gallery">
-  
-        <!-- Grid column -->
-        <div class="mb-3 pics all 2 animation">
-          <a data-toggle="modal" data-target="#basicExampleModal">
-            <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="Card image cap">
-          </a>
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="mb-3 pics animation all 1">
-          <a data-toggle="modal" data-target="#basicExampleModal">
-            <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Vertical/7.jpg" alt="Card image cap">
-          </a>
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="mb-3 pics animation all 1">
-          <a data-toggle="modal" data-target="#basicExampleModal">
-            <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Vertical/4.jpg" alt="Card image cap">
-          </a>
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="mb-3 pics all 2 animation">
-          <a data-toggle="modal" data-target="#basicExampleModal">
-            <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Others/images/63.jpg" alt="Card image cap">
-          </a>
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="mb-3 pics all 2 animation">
-          <a data-toggle="modal" data-target="#basicExampleModal">
-            <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Others/images/64.jpg" alt="Card image cap">
-          </a>
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="mb-3 pics animation all 1">
-          <a data-toggle="modal" data-target="#basicExampleModal">
-            <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Vertical/5.jpg" alt="Card image cap">
-          </a>
-        </div>
-        <!-- Grid column -->
-  
-      </div>
-      <!-- Grid row -->
-  
-    </section>
-    <!-- Section -->
-  
-  </div>
+              </a>
 
-  <!-- Contact Section -->
-  
+              <a href="https://www.youtube.com/channel/UChPIYIRmh0nmQoAHcgL3w_Q/videos">
+                <div class="flip3d">
+                  <div class="front">
+                    <img src="img/icons/social-links/youtube.png" class="social-media" alt="">
+                  </div>
+                  <div class="back">
+                    <img src="img/icons/social-links/hovers/youtube.png" class="social-media" alt="">
+                  </div>
+                </div>
+              </a>
 
-  <!-- Footer -->
-  <footer class="bg-black small text-center text-white-50">
-    <!--<div class="container-hero d-flex h-100"> -->
-      <section id="contact" class="contact-section bg-black container-hero d-flex h-100">
-     
-      <video class="footer-video video-fluid" autoplay disablePictureInPicture loop muted> 
-        <source src="videos/bg-contact.mp4" type="video/mp4"/>
-      </video>
+              <a href="https://www.linkedin.com/in/rivaskvn">
+                <div class="flip3d">
+                  <div class="front">
+                    <img src="img/icons/social-links/linkedin.png" class="social-media" alt="">
+                  </div>
+                  <div class="back">
+                    <img src="img/icons/social-links/hovers/linkedin.png" class="social-media" alt="">
+                  </div>
+                </div>
+              </a>
 
-      <div class="mailto">a.anevenua@gmail.com</div>
-     
-        <!--<div class="social">-->
-          <div class="flip-box">
-            <div class="link1 flip-box-inner d-flex">
-              <a href="https://www.behance.net/agustin_agustin" class="social-links">
-                <div class="flip-box-front">
-                  <img src="img/icons/social-links/behance.png" class="social-media" alt="">
-                </div>
-                <div class="flip-box-back">
-                  <img src="img/icons/social-links/hovers/behance.png" class="social-media top1" alt="">
-                </div>
-                </a>
-            </div>
-          </div>   
-          
-          <div class="flip-box">
-            <div class="link2 flip-box-inner d-flex">
-              <a href="https://www.youtube.com/channel/UChPIYIRmh0nmQoAHcgL3w_Q/videos" class="social-links">
-                <div class="flip-box-front">
-                  <img src="img/icons/social-links/youtube.png" class="social-media" alt="">
-                </div>
-                <div class="flip-box-back">
-                  <img src="img/icons/social-links/hovers/youtube.png" class="social-media top2" alt="">
+              <a href="https://soundcloud.com/agustin_agustin">
+                <div class="flip3d">
+                  <div class="front">
+                    <img src="img/icons/social-links/soundcloud.png" class="social-media" alt="">
+                  </div>
+                  <div class="back">
+                    <img src="img/icons/social-links/hovers/soundcloud.png" class="social-media" alt="">
+                  </div>
                 </div>
               </a>
             </div>
+
+            <div class="cpr">Copyright &copy; 2020 Kevin Agustin Rivas</div>
           </div>
-          
-          <div class="flip-box">
-            <div class="link3 flip-box-inner d-flex">
-              <a href="https://www.linkedin.com/in/rivaskvn" class="social-links">
-                <div class="flip-box-front">
-                  <img src="img/icons/social-links/linkedin.png" class="social-media" alt="">
-                </div>
-                <div class="flip-box-back">
-                  <img src="img/icons/social-links/hovers/linkedin.png" class="social-media top3" alt="">
-                </div>
-              </a>  
-            </div>
-          </div>
-         
-           
-          <div class="flip-box">
-            <div class="link4 flip-box-inner d-flex">
-              <a href="https://soundcloud.com/agustin_agustin" class="social-links">
-                <div class="flip-box-front">
-                  <img src="img/icons/social-links/soundcloud.png" class="social-media" alt="">
-                </div>
-                <div class="flip-box-back">
-                  <img src="img/icons/social-links/hovers/soundcloud.png" class="social-media top4" alt="">
-                </div>
-              </a>
-            </div>
-          </div>
-        <!--</div>-->
-      
-        <p class="cpr">Copyright &copy; 2020 Kevin Agustin Rivas</p>
-      </section>
-    <!--</div>-->
-  </footer>
+      </div>
+  </section>
+</footer>
 
   <!-- Bootstrap core JavaScript -->
-  <!--<script src="vendor/jquery/jquery.min.js"></script>-->
-  <script src="vendor/jquery/jquery-3.5.0.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/grayscale.min.js"></script>
   <script src="js/personalized.js"></script>
 
 </body>
