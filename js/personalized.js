@@ -29,18 +29,38 @@ const masonryLayout = (containerElem, itemsElems, columns) => {
 
 // Play Videos on hover
 
-const playOnHover = () => {
+// const playOnHover = () => {
   
-  var playersrc
-  var symbol = $('.ytplayer')[0].src.indexOf("?") > -1 ? "&" : "?";
-  $('.ytplayer').mouseover(function(){
-    playersrc=$(this)[0].src;
-    $(this)[0].src += symbol + "autoplay=1";
-  });
-  $('.ytplayer').mouseout(function(){
-    $(this).attr('src',playersrc);
-  });
-}
+//   var playersrc
+//   var symbol = $('.ytplayer')[0].src.indexOf("?") > -1 ? "&" : "?";
+//   $('.ytplayer').mouseover(function(){
+//     playersrc=$(this)[0].src;
+//     $(this)[0].src += symbol + "autoplay=1";
+//   });
+//   $('.ytplayer').mouseout(function(){
+//     $(this).attr('src',playersrc);
+//   });
+// }
+
+
+const playOnHover = () => {
+    var video
+    var playersrc
+    var symbol = $('.ytplayer')[0].src.indexOf("?") > -1 ? "&" : "?";
+    $('lightbox_trigger').mouseover(function(){
+      
+      
+      video = $(this).children();
+      if(video[0].tagName.toLowerCase() == "iframe") {
+        playersrc=$(this)[0].src;
+        $(this)[0].src += symbol + "autoplay=1";
+      }
+      
+    });
+    $('.ytplayer').mouseout(function(){
+      $(this).attr('src',playersrc);
+    });
+  }
 
 
 // lightbox behavior
@@ -134,7 +154,7 @@ $('.lightbox_trigger').click(function(e) {
 
 
 function columnNbr(){
-    let columnNumber = Math.ceil(document.body.clientWidth / 250);
+    let columnNumber = Math.ceil(document.body.clientWidth / 280);
     masonryLayout(document.getElementById("gallery"), document.querySelectorAll(".gallery-item"), columnNumber);
 }
 
