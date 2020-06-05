@@ -195,6 +195,12 @@
   /* LIGHTBOX CODE START */
 .gallery-item a{
   display: block;
+  z-index: 90;
+  /* pointer-events: auto; */
+}
+iframe{  
+  z-index: 100;
+  pointer-events: none;
 }
 #lightbox {
   position:fixed; /* keeps the lightbox window in the current viewport */
@@ -226,6 +232,7 @@
   -moz-box-shadow:0 0 25px #111;
   max-width:940px;
   max-height: 90vh;
+  z-index: 1000;
 }
 #lightbox iframe {
   box-shadow:0 0 25px #111;
@@ -234,14 +241,12 @@
   max-width:640px;
   width: 100%;
   height: 73%;
+  z-index: 1000;
 }
 iframe{
   display: flex;
   align-items: center;
   justify-content: center;
-}
-iframe .ytp-show-cards-title{
-  display: none !important;
 }
   /* LIGHTBOX CODE END */
 
