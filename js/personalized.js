@@ -1,125 +1,142 @@
-// Massonry gallery start
 const masonryLayout = (containerElem, itemsElems, columns) => {
 
     // Crea Container para las columnas
-    containerElem.classList.add('masonry-layout', `columns-${columns}`)
-    
+    containerElem.className = '';
+    containerElem.classList.add('masonry-layout', `columns-${columns}`);
+    containerElem.innerHTML = '';
+  
     // Crea n-columnas de acuerdo a "columns"
-    let columnsElements = []
-    for (let i = 1; i <= columns; i++) {
-      let column = document.createElement('div')
-      column.classList.add('masonry-column', `column-${i}`)
-      containerElem.appendChild(column)
-      columnsElements.push(column)
+    let columnsElements = [];
+    for (let i = 1; i <= columns; i++){
+      let column = document.createElement('div');
+      column.classList.add('masonry-column', `column-${i}`);
+      containerElem.appendChild(column);
+      columnsElements.push(column);
     }
   
     // Ubica cada imagen en la columna correspondiente
-    for (let m = 0; m < Math.ceil(itemsElems.length / columns); m++) {
-      for (let n = 0; n < columns; n++) {
-        let item = itemsElems[m * columns + n]
-        columnsElements[n].appendChild(item)
-        item.classList.add('masonry-item')
+    for (let m = 0; m < Math.ceil(itemsElems.length / columns); m++){
+      for (let n = 0; n < columns; n++){
+        if (m * columns + n >= itemsElems.length) {
+          continue;
+        }
+        let item = itemsElems[m * columns + n];
+        columnsElements[n].appendChild(item);
+        item.classList.add('masonry-item');
       }
     }
 }
+
+// Play Videos on hover
+
+// const playOnHover = () => {
+//   var playersrc=$('.ytplayer').attr('src');
+//   var symbol = $(".ytplayer")[0].src.indexOf("?") > -1 ? "&" : "?";
+// $('.ytplayer').mouseover(function(){
+//   $(this)[0].src += symbol + "autoplay=1";
+// });
+// $('.ytplayer').mouseout(function(){
+//   $(this).attr('src',playersrc);
+// });
+// }
+
+// lightbox behavior
+
+function disableScrolling(){
+  var x=window.scrollX;
+  var y=window.scrollY;
+  window.onscroll=function(){window.scrollTo(x, y);};
+}
+function enableScrolling(){
+  window.onscroll=function(){};
+}
+
+
+function imgBuilder(media){
+  var lightbox =
+          '<div id="lightbox">' +
+          '<div id="lightbox-content">' + //insert clicked link's href into img src
+            '<img src="' + media + '">' +
+          '</div>' +
+          '</div>';
+          return lightbox;
+}
+
+function vidBuilder(media){
+  var lightbox = 
+          '<div id="lightbox">' +
+            '<div id="lightbox-content">' + //insert clicked link's href into img src
+              '<iframe src="' + media + '" frameborder="0" allowfullscreen></iframe>' +
+            '</div>' +
+            '</div>';
+            return lightbox;
+}
+	
+$('.lightbox_trigger').click(function(e) {
+  
+  //prevent default action (hyperlink)
+  e.preventDefault();
  
-masonryLayout(document.getElementById("gallery"), document.querySelectorAll(".gallery-item"),5)
+  //Get clicked link href
+  var media_href = $(this).attr("href");
 
-// Massonry gallery endc
+  var item = $(this).children();
+  var classes = item.attr('class');
+  /* 	
+  If the lightbox window HTML already exists in document, 
+  change the img src to to match the href of whatever link was clicked
+  
+  If the lightbox window HTML doesn't exists, create it and insert it.
+  (This will only happen the first time around)
+  */
+  
+  if ($('#lightbox').length > 0) { // #lightbox exists
+
+    disableScrolling();
+    //place href as img src value
+    if(classes) {
+      classes = classes.split(" ");      
+      if(classes[0].startsWith("ytplayer")) {
+        $('#lightbox-content').html('<iframe src="' + media_href + '" frameborder="0" allowfullscreen></iframe>');
+      }
+      else {
+        $('#lightbox-content').html('<img src="' + media_href + '">');
+      }      
+    }
+      
+    //show lightbox window - you could use .show('fast') for a transition
+    $('#lightbox').show();
+  }
+  else { //#lightbox does not exist - create and insert (runs 1st time only)
+    var lightbox
+    //create HTML markup for lightbox window
+    if(classes) {
+      classes = classes.split(" ");
+      if(classes[0].startsWith("ytplayer")) {
+        lightbox = vidBuilder(media_href);
+      }
+      else {
+        lightbox = imgBuilder(media_href);
+      }      
+    }
+      
+    //insert lightbox HTML into page
+    $('body').append(lightbox);
+  }
+  //Click anywhere on the page to get rid of lightbox window
+  $('body').on('click', "#lightbox", function() {
+    $('#lightbox').hide();
+    enableScrolling();
+  });
+});
 
 
-// // Gallery JS //
+function columnNbr(){
+    let columnNumber = Math.ceil(document.body.clientWidth / 250);
+    masonryLayout(document.getElementById("gallery"), document.querySelectorAll(".gallery-item"), columnNumber);
+}
 
-// /**
-//  * Set appropriate spanning to any masonry item
-//  *
-//  * Get different properties we already set for the masonry, calculate 
-//  * height or spanning for any cell of the masonry grid based on its 
-//  * content-wrapper's height, the (row) gap of the grid, and the size 
-//  * of the implicit row tracks.
-//  *
-//  * @param item Object A brick/tile/cell inside the masonry
-//  * @link https://w3bits.com/css-grid-masonry/
-//  */
-// function resizeMasonryItem(item){
-//     /* Get the grid object, its row-gap, and the size of its implicit rows */
-//     var grid = document.getElementsByClassName('masonry')[0];
-//     if( grid ) {
-//       var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap')),
-//           rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows')),
-//           gridImagesAsContent = item.querySelector('img.');
-  
-//       /*
-//        * Spanning for any brick = S
-//        * Grid's row-gap = G
-//        * Size of grid's implicitly create row-track = R
-//        * Height of item content = H
-//        * Net height of the item = H1 = H + G
-//        * Net height of the implicit row-track = T = G + R
-//        * S = H1 / T
-//        */
-//       var rowSpan = Math.ceil((item.querySelector('.').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-  
-//       /* Set the spanning as calculated above (S) */
-//       item.style.gridRowEnd = 'span '+rowSpan;
-//       if(gridImagesAsContent) {
-//         item.querySelector('img.').style.height = item.getBoundingClientRect().height + "px";
-//       }
-//     }
-//   }
-  
-//   /**
-//    * Apply spanning to all the masonry items
-//    *
-//    * Loop through all the items and apply the spanning to them using 
-//    * `resizeMasonryItem()` function.
-//    *
-//    * @uses resizeMasonryItem
-//    * @link https://w3bits.com/css-grid-masonry/
-//    */
-//   function resizeAllMasonryItems(){
-//     // Get all item class objects in one list
-//     var allItems = document.querySelectorAll('.masonry-item');
-  
-//     /*
-//      * Loop through the above list and execute the spanning function to
-//      * each list-item (i.e. each masonry item)
-//      */
-//     if( allItems ) {
-//       for(var i=0;i>allItems.length;i++){
-//         resizeMasonryItem(allItems[i]);
-//       }
-//     }
-//   }
-  
-//   /**
-//    * Resize the items when all the images inside the masonry grid 
-//    * finish loading. This will ensure that all the content inside our
-//    * masonry items is visible.
-//    *
-//    * @uses ImagesLoaded
-//    * @uses resizeMasonryItem
-//    * @link https://w3bits.com/css-grid-masonry/
-//    */
-//   function waitForImages() {
-//     //var grid = document.getElementById("masonry");
-//     var allItems = document.querySelectorAll('.masonry-item');
-//     if( allItems ) {
-//       for(var i=0;i<allItems.length;i++){
-//         imagesLoaded( allItems[i], function(instance) {
-//           var item = instance.elements[0];
-//           resizeMasonryItem(item);
-//           console.log("Waiting for Images");
-//         } );
-//       }
-//     }
-//   }
-  
-//   /* Resize all the grid items on the load and resize events */
-//   var masonryEvents = ['load', 'resize'];
-//   masonryEvents.forEach( function(event) {
-//     window.addEventListener(event, resizeAllMasonryItems);
-//   } );
-  
-//   /* Do a resize once more when all the images finish loading */
-//   waitForImages();
+addEventListener("load", columnNbr)
+// addEventListener("load", playOnHover)
+addEventListener("resize", columnNbr)
+
