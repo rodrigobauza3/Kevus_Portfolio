@@ -225,14 +225,15 @@
   -webkit-box-shadow:0 0 25px #111;
   -moz-box-shadow:0 0 25px #111;
   max-width:940px;
+  max-height: 90vh;
 }
 #lightbox iframe {
   box-shadow:0 0 25px #111;
   -webkit-box-shadow:0 0 25px #111;
   -moz-box-shadow:0 0 25px #111;
-  max-width:940px;
+  max-width:640px;
   width: 100%;
-  height: 100%;
+  height: 73%;
 }
 iframe{
   display: flex;
