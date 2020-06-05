@@ -29,16 +29,16 @@ const masonryLayout = (containerElem, itemsElems, columns) => {
 
 // Play Videos on hover
 
-// const playOnHover = () => {
-//   var playersrc=$('.ytplayer').attr('src');
-//   var symbol = $(".ytplayer")[0].src.indexOf("?") > -1 ? "&" : "?";
-// $('.ytplayer').mouseover(function(){
-//   $(this)[0].src += symbol + "autoplay=1";
-// });
-// $('.ytplayer').mouseout(function(){
-//   $(this).attr('src',playersrc);
-// });
-// }
+const playOnHover = () => {
+  var playersrc=$('.ytplayer').attr('src');
+  var symbol = $(".ytplayer")[0].src.indexOf("?") > -1 ? "&" : "?";
+$('.ytplayer').mouseover(function(){
+  $(this)[0].src += symbol + "autoplay=1";
+});
+$('.ytplayer').mouseout(function(){
+  $(this).attr('src',playersrc);
+});
+}
 
 // lightbox behavior
 
