@@ -223,6 +223,9 @@ iframe{
   justify-content: center;
   background: rgba(0,0,0,0.8);
 }
+#lightbox-content iframe{
+  pointer-events: all;
+}
 #lightbox p {
   text-align:right; 
   color:#fff; 

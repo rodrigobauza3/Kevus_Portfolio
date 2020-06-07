@@ -29,39 +29,24 @@ const masonryLayout = (containerElem, itemsElems, columns) => {
 
 // Play Videos on hover
 
-// const playOnHover = () => {
-  
-//   var playersrc
-//   var symbol = $('.ytplayer')[0].src.indexOf("?") > -1 ? "&" : "?";
-//   $('.ytplayer').mouseover(function(){
-//     playersrc=$(this)[0].src;
-//     $(this)[0].src += symbol + "autoplay=1";
-//   });
-//   $('.ytplayer').mouseout(function(){
-//     $(this).attr('src',playersrc);
-//   });
-// }
-
-
 const playOnHover = () => {
     var video
     var playersrc
-    var symbol = $('.ytplayer')[0].src.indexOf("?") > -1 ? "&" : "?";
-    $('lightbox_trigger').mouseover(function(){
-      
-      
-      video = $(this).children();
-      if(video[0].tagName.toLowerCase() == "iframe") {
-        playersrc=$(this)[0].src;
-        $(this)[0].src += symbol + "autoplay=1";
-      }
-      
-    });
-    $('.ytplayer').mouseout(function(){
-      $(this).attr('src',playersrc);
-    });
+    
+      $('.lightbox_trigger').mouseover(function(){
+          if ($(this).children()[0].tagName.toLowerCase() == "iframe"){
+            video = $(this).children();
+            playersrc = video[0].src;
+            $(this).children()[0].src += "&autoplay=1&mute=1&controls=0";
+          }
+        });    
+      $('.lightbox_trigger').mouseout(function(){
+        if ($(this).children()[0].tagName.toLowerCase() == "iframe"){
+          $(this).children()[0].src = playersrc;
+          video = '';
+        }        
+      });
   }
-
 
 // lightbox behavior
 
@@ -89,7 +74,7 @@ function vidBuilder(media){
   var lightbox = 
           '<div id="lightbox">' +
             '<div id="lightbox-content">' + //insert clicked link's href into img src
-              '<iframe src="' + media + '&autoplay=1&modestbranding=1&autohide=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>' +
+              '<iframe src="' + media + '&autoplay=1&modestbranding=1&autohide=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>' +
             '</div>' +
             '</div>';
             return lightbox;
@@ -117,7 +102,7 @@ $('.lightbox_trigger').click(function(e) {
     
     //place href as img src value  
     if(item[0].tagName.toLowerCase() == "iframe") {
-      $('#lightbox-content').html('<iframe src="' + media_href + '&autoplay=1&modestbranding=1&autohide=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
+      $('#lightbox-content').html('<iframe src="' + media_href + '&autoplay=1&modestbranding=1&autohide=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
     else {
       $('#lightbox-content').html('<img src="' + media_href + '">');
@@ -125,7 +110,7 @@ $('.lightbox_trigger').click(function(e) {
       
     //show lightbox window - you could use .show('fast') for a transition
     disableScrolling();
-    $('#lightbox').show();
+    $('#lightbox').show('fast');
   }
   else { //#lightbox does not exist - create and insert (runs 1st time only)
     var lightbox
