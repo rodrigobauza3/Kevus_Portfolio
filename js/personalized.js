@@ -39,12 +39,19 @@ const playOnHover = () => {
             playersrc = video[0].src;
             $(this).children()[0].src += "&autoplay=1&mute=1&controls=0";
           }
+          else if ($(this).children()[0].tagName.toLowerCase() == "video"){
+            $(this).children()[0].play();
+          }
         });    
       $('.lightbox_trigger').mouseout(function(){
         if ($(this).children()[0].tagName.toLowerCase() == "iframe"){
           $(this).children()[0].src = playersrc;
           video = '';
-        }        
+        }
+        else if ($(this).children()[0].tagName.toLowerCase() == "video"){
+          $(this).children()[0].pause();
+          $(this).children()[0].currentTime = 0;
+        }  
       });
   }
 
@@ -63,9 +70,9 @@ function enableScrolling(){
 function imgBuilder(media){
   var lightbox =
           '<div id="lightbox">' +
-          '<div id="lightbox-content">' + //insert clicked link's href into img src
-            '<img src="' + media + '">' +
-          '</div>' +
+            '<div id="lightbox-content">' + //insert clicked link's href into img src
+              '<img src="' + media + '">' +
+            '</div>' +
           '</div>';
           return lightbox;
 }
@@ -76,8 +83,17 @@ function vidBuilder(media){
             '<div id="lightbox-content">' + //insert clicked link's href into img src
               '<iframe src="' + media + '&autoplay=1&modestbranding=1&autohide=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>' +
             '</div>' +
-            '</div>';
-            return lightbox;
+          '</div>';
+          return lightbox;
+}
+function vidLocalBuilder(media){
+  var lightbox = 
+          '<div id="lightbox">' +
+            '<div id="lightbox-content">' + //insert clicked link's href into img src
+              '<video controls autoplay> <source src="' + media + '"></video>' +
+            '</div>' +
+          '</div>';
+          return lightbox;
 }
 	
 $('.lightbox_trigger').click(function(e) {
@@ -104,6 +120,9 @@ $('.lightbox_trigger').click(function(e) {
     if(item[0].tagName.toLowerCase() == "iframe") {
       $('#lightbox-content').html('<iframe src="' + media_href + '&autoplay=1&modestbranding=1&autohide=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
+    else if(item[0].tagName.toLowerCase() == "video") {
+        $('#lightbox-content').html('<video controls autoplay> <source src="' + media_href + '"></video>');
+      }
     else {
       $('#lightbox-content').html('<img src="' + media_href + '">');
     }
@@ -119,6 +138,9 @@ $('.lightbox_trigger').click(function(e) {
     if(item[0].tagName.toLowerCase() == "iframe") {
       lightbox = vidBuilder(media_href);
     }
+    else if (item[0].tagName.toLowerCase() == "video"){
+      lightbox = vidLocalBuilder(media_href);
+    }
     else {
       lightbox = imgBuilder(media_href);
     }      
@@ -132,6 +154,7 @@ $('.lightbox_trigger').click(function(e) {
     if(item[0].tagName.toLowerCase() == "iframe") {
       $('#lightbox-content').html('<iframe src="' + media_href + '&modestbranding=1&autohide=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
+    // falta stop para mutear el sonido del local vid
     $('#lightbox').hide();
     enableScrolling();
   });
