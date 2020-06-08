@@ -154,7 +154,9 @@ $('.lightbox_trigger').click(function(e) {
     if(item[0].tagName.toLowerCase() == "iframe") {
       $('#lightbox-content').html('<iframe src="' + media_href + '&modestbranding=1&autohide=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
-    // falta stop para mutear el sonido del local vid
+    else if(item[0].tagName.toLowerCase() == "video") {
+      $('#lightbox-content').html('<video controls autoplay muted> <source src="' + media_href + '"></video>');
+    }
     $('#lightbox').hide();
     enableScrolling();
   });
