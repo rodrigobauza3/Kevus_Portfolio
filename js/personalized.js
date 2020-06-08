@@ -166,7 +166,7 @@ function columnNbr(){
     // let col_clientWidth = document.body.clientWidth / 280;
     // let col_windowWidth = $(window).width() / 280;
     // let col_windowInner = window.innerWidth / 280;
-    let columnNumber = Math.ceil(window.innerWidth / 270);
+    let columnNumber = Math.ceil(window.innerWidth / 260);
     masonryLayout(document.getElementById("gallery"), document.querySelectorAll(".gallery-item"), columnNumber);
 }
 
