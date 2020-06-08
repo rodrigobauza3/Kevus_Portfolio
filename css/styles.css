@@ -210,7 +210,7 @@
   /* LIGHTBOX CODE START */
 .gallery-item a{
   display: block;
-  z-index: 90;
+  z-index: 20;
 }
 #lightbox {
   position:fixed; /* keeps the lightbox window in the current viewport */
@@ -229,24 +229,33 @@
   justify-content: center;
   background: rgba(0,0,0,0.8);
 }
+#lightbox-overlay {
+  display: inline-flex;
+  position: relative;
+  margin: 1em 2em;
+  justify-content: center;
+}
 /* #lightbox-content iframe{
   pointer-events: all;
 } */
-#lightbox p {
-  text-align:right; 
-  color:#fff; 
-  margin-right:20px; 
-  font-size:12px; 
+#lightbox-overlay p {
+  top: 90%;
+  position: absolute;
+  width: 100%;
+  text-align: center; 
+  color: #fff;
+  font-size:12px;
+  background: rgba(0,0,0,0.8);
+  z-index: 30;
 }
 #lightbox img {
   box-shadow:0 0 25px #111;
   -webkit-box-shadow:0 0 25px #111;
   -moz-box-shadow:0 0 25px #111;
   max-width:940px;
-  width: 100%;
-  padding: 0 2em;
-  max-height: 90vh;
-  z-index: 1000;
+  /* width: 100%; */
+  max-height: 85vh;
+  z-index: 20;
 }
 #lightbox iframe {
   box-shadow:0 0 25px #111;
@@ -254,9 +263,9 @@
   -moz-box-shadow:0 0 25px #111;
   max-width:640px;
   width: 100%;
-  padding: 0 2em;
+  margin: 1em 2em;
   height: 73%;
-  z-index: 1000;
+  z-index: 20;
   pointer-events: all;
 }
 #lightbox video {
@@ -265,9 +274,8 @@
   -moz-box-shadow:0 0 25px #111;
   max-width:640px;
   width: 100%;
-  padding: 0 2em;
   max-height: 90%;
-  z-index: 1000;
+  z-index: 20;
 }
 .gallery-item video {
   width: 100%;
@@ -279,11 +287,6 @@ iframe {
   z-index: 100;
   pointer-events: none;
 }
-/* video {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
   /* LIGHTBOX CODE END */
 
   #footer {

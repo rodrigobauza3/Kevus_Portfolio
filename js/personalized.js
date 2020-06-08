@@ -71,7 +71,10 @@ function imgBuilder(media){
   var lightbox =
           '<div id="lightbox">' +
             '<div id="lightbox-content">' + //insert clicked link's href into img src
-              '<img src="' + media + '">' +
+              '<div id="lightbox-overlay">' + 
+                '<img src="' + media + '">' +
+                '<p>Image title</p>' +
+              '</div>' +
             '</div>' +
           '</div>';
           return lightbox;
@@ -124,7 +127,7 @@ $('.lightbox_trigger').click(function(e) {
         $('#lightbox-content').html('<video controls autoplay> <source src="' + media_href + '"></video>');
       }
     else {
-      $('#lightbox-content').html('<img src="' + media_href + '">');
+      $('#lightbox-content').html('<div id="lightbox-overlay"> <img src="' + media_href + '"> <p>Image title</p></div>');
     }
       
     //show lightbox window - you could use .show('fast') for a transition
