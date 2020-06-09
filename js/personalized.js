@@ -136,6 +136,9 @@ $('.lightbox_trigger').click(function(e) {
     //show lightbox window - you could use .show('fast') for a transition
     disableScrolling();
     $('#lightbox').show('fast');
+    $("img").on("contextmenu",function(){
+      return false;
+    });
   }
   else { //#lightbox does not exist - create and insert (runs 1st time only)
     var lightbox
