@@ -67,13 +67,13 @@ function enableScrolling(){
 }
 
 
-function imgBuilder(media){
+function imgBuilder(src, title){
   var lightbox =
           '<div id="lightbox">' +
             '<div id="lightbox-content">' + //insert clicked link's href into img src
               '<div id="lightbox-overlay">' + 
-                '<img src="' + media + '">' +
-                '<p>Image title</p>' +
+                '<img src="' + src + '">' +
+                '<p>' + title + '</p>' +
               '</div>' +
             '</div>' +
           '</div>';
@@ -93,7 +93,7 @@ function vidLocalBuilder(media){
   var lightbox = 
           '<div id="lightbox">' +
             '<div id="lightbox-content">' + //insert clicked link's href into img src
-              '<video controls autoplay> <source src="' + media + '"></video>' +
+              '<video controls autoplay loop> <source src="' + media + '"></video>' +
             '</div>' +
           '</div>';
           return lightbox;
@@ -106,7 +106,7 @@ $('.lightbox_trigger').click(function(e) {
  
   //Get clicked link href
   var media_href = $(this).attr("href");
-
+  var media_name = media_href.split("/").pop().split(".")[0]
   var item = $(this).children();
   /* 	
   If the lightbox window HTML already exists in document, 
@@ -124,10 +124,10 @@ $('.lightbox_trigger').click(function(e) {
       $('#lightbox-content').html('<iframe src="' + media_href + '&autoplay=1&modestbranding=1&autohide=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
     else if(item[0].tagName.toLowerCase() == "video") {
-        $('#lightbox-content').html('<video controls autoplay> <source src="' + media_href + '"></video>');
+        $('#lightbox-content').html('<video controls autoplay loop> <source src="' + media_href + '"></video>');
       }
     else {
-      $('#lightbox-content').html('<div id="lightbox-overlay"> <img src="' + media_href + '"> <p>Image title</p></div>');
+      $('#lightbox-content').html('<div id="lightbox-overlay"> <img src="' + media_href + '"> <p>' + media_name + '</p></div>');
     }
       
     //show lightbox window - you could use .show('fast') for a transition
@@ -145,7 +145,7 @@ $('.lightbox_trigger').click(function(e) {
       lightbox = vidLocalBuilder(media_href);
     }
     else {
-      lightbox = imgBuilder(media_href);
+      lightbox = imgBuilder(media_href, media_name);
     }      
     
       
