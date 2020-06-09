@@ -273,7 +273,7 @@
   -webkit-box-shadow:0 0 25px #111;
   -moz-box-shadow:0 0 25px #111;
   max-width:640px;
-  width: 100%;
+  /* width: 100%; */
   max-height: 90%;
   z-index: 20;
 }
@@ -417,7 +417,7 @@ iframe {
 }
   @media(max-aspect-ratio: 16/9){ /* //Regular// */
     .videoBg{
-        width: auto; 
+      width: 100%; 
     }
     .h-title{
       left: 16%;

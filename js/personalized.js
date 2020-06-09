@@ -66,6 +66,9 @@ function enableScrolling(){
   window.onscroll=function(){};
 }
 
+$("img").on("contextmenu",function(){
+  return false;
+});
 
 function imgBuilder(src, title){
   var lightbox =
@@ -158,7 +161,7 @@ $('.lightbox_trigger').click(function(e) {
       $('#lightbox-content').html('<iframe src="' + media_href + '&modestbranding=1&autohide=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
     else if(item[0].tagName.toLowerCase() == "video") {
-      $('#lightbox-content').html('<video controls autoplay muted> <source src="' + media_href + '"></video>');
+      $('#lightbox-content').html('<video controls muted> <source src="' + media_href + '"></video>');
     }
     $('#lightbox').hide();
     enableScrolling();
@@ -169,7 +172,7 @@ function columnNbr(){
     // let col_clientWidth = document.body.clientWidth / 280;
     // let col_windowWidth = $(window).width() / 280;
     // let col_windowInner = window.innerWidth / 280;
-    let columnNumber = Math.ceil(window.innerWidth / 280);
+    let columnNumber = Math.ceil(window.innerWidth / 280) > 5 ? 5 : Math.ceil(window.innerWidth / 280);
     masonryLayout(document.getElementById("gallery"), document.querySelectorAll(".gallery-item"), columnNumber);
 }
 
