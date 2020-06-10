@@ -161,6 +161,7 @@
     min-height: 100vh;
   }
   .gallery-title{
+    font-weight: normal;
     font-size: 2em;
     padding-top: 1em;
     padding-bottom: 1em;

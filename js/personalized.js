@@ -100,10 +100,20 @@ function disableScrolling(){
 function enableScrolling(){
   window.onscroll=function(){};
 }
-
-$("img").on("contextmenu",function(){
-  return false;
-});
+function disableRightClick(){
+  $("img").bind("contextmenu",function(){
+    return false;
+  });
+  $("video").bind("contextmenu",function(){
+    return false;
+  });
+  $("iframe").bind("contextmenu",function(){
+    return false;
+  });
+  $(".gallery-item").bind("contextmenu",function(){
+    return false;
+  });
+}
 
 function imgBuilder(src, title){
   var lightbox =
@@ -170,10 +180,9 @@ $('.lightbox_trigger').click(function(e) {
       
     //show lightbox window - you could use .show('fast') for a transition
     disableScrolling();
+    disableRightClick()
     $('#lightbox').show('fast');
-    $("img").on("contextmenu",function(){
-      return false;
-    });
+    
   }
   else { //#lightbox does not exist - create and insert (runs 1st time only)
     var lightbox
@@ -187,9 +196,8 @@ $('.lightbox_trigger').click(function(e) {
     }
     else {
       lightbox = imgBuilder(media_href, media_name);
-    }      
-    
-      
+    }
+
     //insert lightbox HTML into page
     $('body').append(lightbox);
   }
@@ -215,6 +223,7 @@ function columnNbr(){
 }
 
 addEventListener("load", columnNbr)
+addEventListener("load", disableRightClick)
 addEventListener("load", playOnHover)
 addEventListener("resize", columnNbr)
 
