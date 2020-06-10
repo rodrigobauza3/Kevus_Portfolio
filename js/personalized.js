@@ -163,7 +163,7 @@ $('.lightbox_trigger').click(function(e) {
   If the lightbox window HTML doesn't exists, create it and insert it.
   (This will only happen the first time around)
   */
-  
+  disableRightClick();
   if ($('#lightbox').length > 0) { // #lightbox exists
 
     
@@ -180,7 +180,7 @@ $('.lightbox_trigger').click(function(e) {
       
     //show lightbox window - you could use .show('fast') for a transition
     disableScrolling();
-    disableRightClick()
+    disableRightClick();
     $('#lightbox').show('fast');
     
   }

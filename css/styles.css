@@ -251,7 +251,8 @@
   pointer-events: all;
 } */
 #lightbox-overlay p {
-  top: 90%;
+  top: 0;
+  margin: 0;
   position: absolute;
   width: 100%;
   text-align: center; 
