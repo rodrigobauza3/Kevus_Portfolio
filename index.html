@@ -11,7 +11,7 @@
   <title>Anevenua</title>
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 
   <!-- Custom fonts for this template -->
   <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"> -->
@@ -25,15 +25,10 @@
   <script src="js/jquery.js"></script>
   
   <!-- Custom Scripts -->
-  <!-- <script>
-    $( document ).ready(function() {
-        console.log( "document loaded" );
-    });
- 
-    $( window ).on( "load", function() {
-        console.log( "window loaded" );
-    });
-  </script> -->
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="css/fonts/Varela-Round.css" as="style">
+  <link rel="preload" href="css/fonts/Nunito.css" as="style">
+  <link rel="preload" href="js/personalized.js" as="script">
   
 </head>
 
@@ -42,7 +37,7 @@
 <header class="v-header container">
     <div class="fullscreen-video-wrap">
         <video class="videoBg" poster="img/bgn_video_home.jpg" autoplay loop muted> 
-            <source src="videos/bg-hero.mp4" type="video/mp4"/>
+            <source src="videos/bg-hero.mp4" type="video/mp4">
         </video>
     </div>
     <!-- <div class="header-overlay"></div> -->
@@ -58,7 +53,7 @@
   </div>
   <div class="bio-video container">
     <video class="video-fluid z-depth-1" poster="img/bgn_bio_video.jpg" autoplay loop muted> 
-        <source src="videos/bio_video.mp4" type="video/mp4"/>
+        <source src="videos/bio_video.mp4" type="video/mp4">
     </video>
   </div>
   <!-- <div class="bio-video container">                           POR NUEVO VIDEO BACKGROUND
@@ -96,21 +91,23 @@
       
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/o2rYpFHUPhE?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer" src="https://www.youtube.com/embed/o2rYpFHUPhE?rel=0" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+          <img src="https://img.youtube.com/vi/o2rYpFHUPhE/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
       <div class="gallery-item">
         <a href="img/gallery/5 - thou shalt not kill.jpg" class="lightbox_trigger">
-          <img src="img/gallery/_thumbnail/5 - thou shalt not kill.png" alt="" class="img1">
+          <img src="img/gallery/_thumbnail/5 - thou shalt not kill.png" alt="">
         </a>
       </div>
 
       <div class="gallery-item">
         <a href="videos/gallery/Wish you.mp4" class="lightbox_trigger">
-          <video poster="videos/gallery/_thumbnail/Wish you.png" loop muted>
-            <source src="videos/gallery/Wish you.mp4">
+          <video preload="auto" poster="videos/gallery/_thumbnail/Wish you.png" loop muted>
+            <source src="videos/gallery/Wish you.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -123,8 +120,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Blau.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Blau.png" loop muted>
-            <source src="videos/gallery/Blau.mp4">
+            <source src="videos/gallery/Blau.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -136,15 +134,17 @@
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/PMZZrNZaZsg?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer" src="https://www.youtube.com/embed/PMZZrNZaZsg?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/PMZZrNZaZsg/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
       <div class="gallery-item">
         <a href="videos/gallery/Only what matters.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Only what matters.png" loop muted>
-            <source src="videos/gallery/Only what matters.mp4">
+            <source src="videos/gallery/Only what matters.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -163,8 +163,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Garrett Paknis - Drip videoclip 02.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Garrett Paknis - Drip videoclip 02.png" loop muted>
-            <source src="videos/gallery/Garrett Paknis - Drip videoclip 02.mp4">
+            <source src="videos/gallery/Garrett Paknis - Drip videoclip 02.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -182,7 +183,8 @@
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/ZPFIa92dCB0?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer img9" src="https://www.youtube.com/embed/ZPFIa92dCB0?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/ZPFIa92dCB0/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
@@ -200,7 +202,8 @@
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/4C-TXLJOx20?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer img12" src="https://www.youtube.com/embed/4C-TXLJOx20?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/4C-TXLJOx20/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
@@ -213,8 +216,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Only what matters 02.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Only what matters 02.png" loop muted>
-            <source src="videos/gallery/Only what matters 02.mp4">
+            <source src="videos/gallery/Only what matters 02.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -227,8 +231,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Garrett Paknis - Hanted videoclip 01.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Garrett Paknis - Hanted videoclip 01.png" loop muted>
-            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 01.mp4">
+            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 01.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -240,7 +245,8 @@
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/Y-eT_UeOXi0?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer img18" src="https://www.youtube.com/embed/Y-eT_UeOXi0?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/Y-eT_UeOXi0/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
@@ -252,7 +258,8 @@
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/Xh41RCT3eLA?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer img13" src="https://www.youtube.com/embed/Xh41RCT3eLA?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/Xh41RCT3eLA/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
@@ -270,7 +277,8 @@
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/aaS9l6_Ftyw?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer img22" src="https://www.youtube.com/embed/aaS9l6_Ftyw?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/aaS9l6_Ftyw/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
@@ -289,8 +297,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Pletzinger - Zero G Force.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Pletzinger - Zero G Force.png" loop muted>
-            <source src="videos/gallery/Pletzinger - Zero G Force.mp4">
+            <source src="videos/gallery/Pletzinger - Zero G Force.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -302,7 +311,8 @@
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/A3QgV8_vVOI?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer img26" src="https://www.youtube.com/embed/A3QgV8_vVOI?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/A3QgV8_vVOI/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
@@ -321,8 +331,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/NAKT - Air Collection 01.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/NAKT - Air Collection 01.png" loop muted>
-            <source src="videos/gallery/NAKT - Air Collection 01.mp4">
+            <source src="videos/gallery/NAKT - Air Collection 01.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -341,8 +352,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/NAKT - Air Collection 02.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/NAKT - Air Collection 02.png" loop muted>
-            <source src="videos/gallery/NAKT - Air Collection 02.mp4">
+            <source src="videos/gallery/NAKT - Air Collection 02.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -354,7 +366,8 @@
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/OmdQR6w6jX8?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer img15" src="https://www.youtube.com/embed/OmdQR6w6jX8?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/OmdQR6w6jX8/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
@@ -366,7 +379,8 @@
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/IrTp1zkMg24?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer" src="https://www.youtube.com/embed/IrTp1zkMg24?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/IrTp1zkMg24/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
@@ -379,8 +393,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Garrett Paknis - Drip videoclip 03.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Garrett Paknis - Drip videoclip 03.png" loop muted>
-            <source src="videos/gallery/Garrett Paknis - Drip videoclip 03.mp4">
+            <source src="videos/gallery/Garrett Paknis - Drip videoclip 03.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -399,8 +414,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Garrett Paknis - Drip videoclip 04.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Garrett Paknis - Drip videoclip 04.png" loop muted>
-            <source src="videos/gallery/Garrett Paknis - Drip videoclip 04.mp4">
+            <source src="videos/gallery/Garrett Paknis - Drip videoclip 04.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -419,8 +435,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Garrett Paknis - Hanted videoclip 02.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Garrett Paknis - Hanted videoclip 02.png" loop muted>
-            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 02.mp4">
+            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 02.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -433,8 +450,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Garrett Paknis - Hanted videoclip 03.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Garrett Paknis - Hanted videoclip 03.png" loop muted>
-            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 03.mp4">
+            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 03.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
       
@@ -459,16 +477,18 @@
       <div class="gallery-item">
         <a href="videos/gallery/Garrett Paknis - Hanted videoclip 04.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Garrett Paknis - Hanted videoclip 04.png" loop muted>
-            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 04.mp4">
+            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 04.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
       <div class="gallery-item">
         <a href="videos/gallery/Gradient.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Gradient.png" loop muted>
-            <source src="videos/gallery/Gradient.mp4">
+            <source src="videos/gallery/Gradient.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -487,14 +507,16 @@
       <div class="gallery-item">
         <a href="videos/gallery/tritone 01.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/tritone 01.png" loop muted>
-            <source src="videos/gallery/tritone 01.mp4">
+            <source src="videos/gallery/tritone 01.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
       <div class="gallery-item">
         <a href="https://www.youtube.com/embed/PRpjTaKxrbo?rel=0" class="lightbox_trigger">
-          <iframe class="ytplayer" src="https://www.youtube.com/embed/PRpjTaKxrbo?rel=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/PRpjTaKxrbo/0.jpg" alt="" class="yt-video">
+          <img src="img/play.png" class="video-play">
         </a>
       </div>
 
@@ -513,8 +535,9 @@
       <div class="gallery-item">
         <a href="videos/gallery/Garrett Paknis - Hanted videoclip 05.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Garrett Paknis - Hanted videoclip 05.png" loop muted>
-            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 05.mp4">
+            <source src="videos/gallery/Garrett Paknis - Hanted videoclip 05.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -533,16 +556,18 @@
       <div class="gallery-item">
         <a href="videos/gallery/Garrett Paknis - Drip videoclip 01.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/Garrett Paknis - Drip videoclip 01.png" loop muted>
-            <source src="videos/gallery/Garrett Paknis - Drip videoclip 01.mp4">
+            <source src="videos/gallery/Garrett Paknis - Drip videoclip 01.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
       <div class="gallery-item">
         <a href="videos/gallery/TC I TC - Chain Dress.mp4" class="lightbox_trigger">
           <video poster="videos/gallery/_thumbnail/TC I TC - Chain Dress.png" loop muted>
-            <source src="videos/gallery/TC I TC - Chain Dress.mp4">
+            <source src="videos/gallery/TC I TC - Chain Dress.mp4" type="video/mp4">
           </video>
+          <img src="img/play.png" class="video-play">
         </a>        
       </div>
 
@@ -556,7 +581,7 @@
     <div class="v-footer container">
         <div class="fullscreen-footer-video-wrap">
             <video class="videoBg-footer" poster="img/bgn_video_footer.jpg" autoplay loop muted> 
-                <source src="videos/bg-contact.mp4" type="video/mp4"/>
+                <source src="videos/bg-contact.mp4" type="video/mp4">
             </video>
         </div>
         <div class="contact-elements">
@@ -616,11 +641,11 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="js/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+  <!-- <script src="js/bootstrap.min.js"></script> -->
 
   <!-- Plugin JavaScript -->
-  <script src="js/jquery.min.js"></script>
+  <!-- <script src="js/jquery.min.js"></script> -->
 
   <!-- Custom scripts for this template -->
   <script src="js/personalized.js"></script>

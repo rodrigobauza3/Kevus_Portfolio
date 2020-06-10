@@ -207,9 +207,20 @@
 /* New masonry gallery end */
 
   /* LIGHTBOX CODE START */
-.gallery-item a{
+.lightbox_trigger{
   display: block;
   z-index: 20;
+  position: relative;
+}
+.lightbox_trigger .yt-video{
+  margin: auto;
+  height: 149.6px;
+}
+.lightbox_trigger .video-play{
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  pointer-events: none;
 }
 #lightbox {
   position:fixed; /* keeps the lightbox window in the current viewport */
@@ -219,6 +230,7 @@
   height:100%; 
   transition: opacity 450ms ease-in-out;
   text-align:center;
+  z-index: 50;
 }
 #lightbox-content {
   display: inline-flex;
