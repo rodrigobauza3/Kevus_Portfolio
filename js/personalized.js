@@ -8,9 +8,12 @@ const playOnHover = () => {
           img = $(this).find('img').attr('src');
           $(this).html('<iframe src="' + $(this).attr("href") + '?rel=0&autoplay=1&mute=1&modestbranding=1&autohide=1" frameborder="0" allow="autoplay"></iframe>');
       }
-      else if ($(this).children()[0].tagName.toLowerCase() == "video"){
-          $(this).children('.video-play').hide();
-          playPromise = $(this).children()[0].play();
+      else if ($(this).children()[0].className == "lc-video"){
+          img = $(this).find('img').attr('src');
+          $(this).html('<video autoplay loop> <source src="' + $(this).attr("href") + '"></video>');
+          // $(this).children('.video-play').hide();
+          // $(this).find('video').load();
+          // playPromise = $(this).find('video').play();
       }
   });    
   $('.lightbox_trigger').mouseout(function(){
@@ -18,16 +21,7 @@ const playOnHover = () => {
           $(this).html('<img src="' + img + '" class="yt-video"><img src="img/play.png" class="video-play">');
       }
       else if ($(this).children()[0].tagName.toLowerCase() == "video"){
-          if (playPromise !== undefined){
-              playPromise.then(_ => {
-                  $(this).children()[0].pause();
-              })
-              .catch(error => {
-                  console.log(error);
-              });          
-          }        
-      $(this).children()[0].load();
-      $(this).children('.video-play').show();
+        $(this).html('<img src="' + img + '" class="lc-video"><img src="img/play.png" class="video-play">');
       }  
   });
 }

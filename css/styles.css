@@ -538,8 +538,8 @@
 }
   @media(max-aspect-ratio: 16/9){ /* //Regular// */
     .videoBg{
-      max-width: 100%;
-      width: 100%;
+      /* max-width: 100%;
+      width: 100%; */
       height: 104vh;
     }
     .h-title{
