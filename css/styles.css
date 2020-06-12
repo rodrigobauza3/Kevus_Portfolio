@@ -272,7 +272,7 @@
     margin-block-end: 0;
     position: absolute;
     width: 100%;
-    max-width: 60%;
+    /* max-width: 60%; */
     text-align: center; 
     color: #fff;
     font-size:12px;
@@ -340,7 +340,6 @@
         max-width: 90%;
     } */
     #lightbox video {
-        max-width: 60%;
         height: auto;
         max-height: 60vw;
     }
@@ -360,13 +359,13 @@
         max-width: 90%;
     }
     #lightbox iframe {
-        height: 50vw;
+        height: 35vw;
         max-width: 70%;        
     }
     #lightbox video {
-        max-width: 60%;
+        min-width: 100%;
         height: auto;
-        max-height: 60vw;
+        max-height: 80vw;
     }
 }
 @media only screen and (min-width: 1101px) and (max-width: 1366px){
@@ -433,7 +432,7 @@
   }
   .videoBg-footer{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     object-fit: fill;
   }
   .contact-elements{
@@ -539,7 +538,9 @@
 }
   @media(max-aspect-ratio: 16/9){ /* //Regular// */
     .videoBg{
-      width: 100%; 
+      max-width: 100%;
+      width: 100%;
+      height: 104vh;
     }
     .h-title{
       left: 16%;
@@ -554,7 +555,7 @@
       padding-top: 5em;
     }
     .bio-video video { /*para nuevo bio.video background*/
-      height: auto;
+      height: 82vh;
     }
     .about-banner img { /*para nuevo bio.video background*/
       padding: 5em 3em;
