@@ -334,15 +334,15 @@
         max-width: 80%;
     }
     #lightbox-v-overlay p {
-        max-width: 91%;
+        /* max-width: 91%; */
     }    
     /* #lightbox img {
         max-width: 90%;
     } */
     #lightbox video {
-        max-width: 90%;
-        width: 100%;
+        max-width: 60%;
         height: auto;
+        max-height: 60vw;
     }
 }
 @media only screen and (min-width: 769px) and (max-width: 1100px){
@@ -366,6 +366,7 @@
     #lightbox video {
         max-width: 60%;
         height: auto;
+        max-height: 60vw;
     }
 }
 @media only screen and (min-width: 1101px) and (max-width: 1366px){
@@ -385,7 +386,7 @@
     #lightbox video {
         max-width: 60%;
         height: auto;
-        max-height: 80vw;
+        max-height: 60vw;
     }
   }
 @media only screen and (min-width: 1366px){
@@ -405,7 +406,7 @@
     #lightbox video {
         max-width: 60%;
         height: auto;
-        max-height: 80vw;
+        max-height: 60vw;
     }
 }
   /* LIGHTBOX CODE END */
