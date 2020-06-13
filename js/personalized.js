@@ -1,33 +1,33 @@
+function mouseOverAction(e){
+  if (e.children()[0].className == "yt-video"){
+    e.html('<iframe src="' + e.attr("href") + '?rel=0&autoplay=1&mute=1&modestbranding=1&autohide=1" frameborder="0" allow="autoplay"></iframe>');
+  }
+  else if (e.children()[0].className == "lc-video"){
+    e.html('<video autoplay loop muted> <source src="' + e.attr("href") + '"></video>');
+  }
+};
+
+function mouseOutAction(e){
+  var img, id
+  if (e.children()[0].tagName.toLowerCase() == "iframe"){
+    id = e.children()[0].src.split("/").pop().split("?")[0];
+    e.html('<img src="https://img.youtube.com/vi/' + id + '/0.jpg" class="yt-video"><img src="img/play.png" class="video-play">');
+  }
+  else if (e.children()[0].tagName.toLowerCase() == "video"){
+    img = e.children()[0].innerHTML.split("/").pop().split(".")[0];
+    e.html('<img src="videos/gallery/_thumbnail/' + img + '.png" class="lc-video"><img src="img/play.png" class="video-play">');
+  }  
+};
+
 const playOnHover = () => {
-  var playPromise
-  var img
   
   $('.lightbox_trigger').mouseover(function(){
-  
-      if ($(this).children()[0].className == "yt-video"){
-          img = $(this).find('img').attr('src');
-          $(this).html('<iframe src="' + $(this).attr("href") + '?rel=0&autoplay=1&mute=1&modestbranding=1&autohide=1" frameborder="0" allow="autoplay"></iframe>');
-      }
-      else if ($(this).children()[0].className == "lc-video"){
-          img = $(this).find('img').attr('src');
-          $(this).html('<video autoplay loop> <source src="' + $(this).attr("href") + '"></video>');
-          // $(this).children('.video-play').hide();
-          // $(this).find('video').load();
-          // playPromise = $(this).find('video').play();
-      }
+      mouseOverAction($(this));
   });    
   $('.lightbox_trigger').mouseout(function(){
-      if ($(this).children()[0].tagName.toLowerCase() == "iframe"){
-          $(this).html('<img src="' + img + '" class="yt-video"><img src="img/play.png" class="video-play">');
-      }
-      else if ($(this).children()[0].tagName.toLowerCase() == "video"){
-        $(this).html('<img src="' + img + '" class="lc-video"><img src="img/play.png" class="video-play">');
-      }  
+      mouseOutAction($(this));
   });
 }
-
-
-// lightbox behavior
 
 function disableScrolling(){
   var x=window.scrollX;
@@ -55,7 +55,7 @@ function disableRightClick(){
 function imgBuilder(src, title){
   var lightbox =
           '<div id="lightbox">' +
-            '<div id="lightbox-content">' + //insert clicked link's href into img src
+            '<div id="lightbox-content">' +
               '<div id="lightbox-overlay">' + 
                 '<img src="' + src + '">' +
                 '<p>' + title + '</p>' +
@@ -67,7 +67,7 @@ function imgBuilder(src, title){
 function vidBuilder(vidID){
   var lightbox = 
           '<div id="lightbox">' +
-            '<div id="lightbox-content">' + //insert clicked link's href into img src
+            '<div id="lightbox-content">' +
               '<iframe src="https://www.youtube.com/embed/' + vidID + '?rel=0&autoplay=1&modestbranding=1&autohide=1&loop=1&playlist=' + vidID + '" frameborder="0" allow="autoplay" allowfullscreen></iframe>' +
             '</div>' +
           '</div>';
@@ -76,7 +76,7 @@ function vidBuilder(vidID){
 function vidLocalBuilder(src, title){
   var lightbox = 
           '<div id="lightbox">' +
-            '<div id="lightbox-content">' + //insert clicked link's href into img src
+            '<div id="lightbox-content">' +
               '<div id="lightbox-v-overlay">' +
                   '<video controls autoplay loop> <source src="' + src + '"></video>' +
                   '<p>' + title + '</p>' +
@@ -90,24 +90,13 @@ $('.lightbox_trigger').click(function(e) {
   
   //prevent default action (hyperlink)
   e.preventDefault();
-  
- 
-  //Get clicked link href
-  var media_href = $(this).attr("href");
-  // var videoID = media_href.split("/").pop()
-  var media_name = media_href.split("/").pop().split(".")[0]
-  var item = $(this).children();
-  /* 	
-  If the lightbox window HTML already exists in document, 
-  change the img src to to match the href of whatever link was clicked
-  
-  If the lightbox window HTML doesn't exists, create it and insert it.
-  (This will only happen the first time around)
-  */
-  if ($('#lightbox').length > 0) { // #lightbox exists
 
-    
-    //place href as img src value  
+  var media_href = $(this).attr("href");
+  var media_name = media_href.split("/").pop().split(".")[0];
+  var item = $(this).children();
+ 
+  if ($('#lightbox').length > 0) {
+
     if(item[0].tagName.toLowerCase() == "iframe") {
       $('#lightbox-content').html('<iframe src="https://www.youtube.com/embed/' + media_name + '?rel=0&autoplay=1&modestbranding=1&autohide=1&loop=1&playlist=' + media_name + '" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
@@ -117,16 +106,14 @@ $('.lightbox_trigger').click(function(e) {
     else {
       $('#lightbox-content').html('<div id="lightbox-overlay"> <img src="' + media_href + '"> <p>' + media_name + '</p></div>');
     }
-      
-    //show lightbox window - you could use .show('fast') for a transition      
+
     disableRightClick();
     disableScrolling();
     $('#lightbox').show('fast');
     
   }
-  else { //#lightbox does not exist - create and insert (runs 1st time only)
+  else {
     var lightbox
-    //create HTML markup for lightbox window
     
     if(item[0].tagName.toLowerCase() == "iframe") {
       lightbox = vidBuilder(media_name);
@@ -138,10 +125,9 @@ $('.lightbox_trigger').click(function(e) {
       lightbox = imgBuilder(media_href, media_name);
     }
 
-    //insert lightbox HTML into page
     $('body').append(lightbox);
   }
-  //Click anywhere on the page to get rid of lightbox window
+
   $('body').on('click', "#lightbox", function() {
     if(item[0].tagName.toLowerCase() == "iframe") {
       $('#lightbox-content').html('<iframe src="https://www.youtube.com/embed/' + media_name + '?rel=0&modestbranding=1&autohide=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
