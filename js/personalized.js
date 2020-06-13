@@ -1,6 +1,6 @@
 function mouseOverAction(e){
   if (e.children()[0].className == "yt-video"){
-    e.html('<iframe src="' + e.attr("href") + '?rel=0&autoplay=1&mute=1&modestbranding=1&autohide=1" frameborder="0" allow="autoplay"></iframe>');
+    e.html('<iframe src="' + e.attr("href") + '?rel=0&autoplay=1&mute=1&modestbranding=1&autohide=1&loop=1&playlist=' + e.attr("href").split("/").pop().split(".")[0] + '" frameborder="0" allow="autoplay"></iframe>');
   }
   else if (e.children()[0].className == "lc-video"){
     e.html('<video autoplay loop muted> <source src="' + e.attr("href") + '"></video>');
