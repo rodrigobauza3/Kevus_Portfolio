@@ -95,10 +95,10 @@ $('.lightbox_trigger').click(function(e) {
  
   if ($('#lightbox').length > 0) {
 
-    if(item[0].tagName.toLowerCase() == "iframe") {
+    if(item[0].tagName.toLowerCase() == "iframe" || item[0].className == "yt-video") {
       $('#lightbox-content').html('<iframe src="https://www.youtube.com/embed/' + media_name + '?rel=0&autoplay=1&modestbranding=1&autohide=1&loop=1&playlist=' + media_name + '" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
-    else if(item[0].tagName.toLowerCase() == "video") {
+    else if(item[0].tagName.toLowerCase() == "video" || item[0].className == "lc-video") {
         $('#lightbox-content').html('<div id="lightbox-v-overlay"> <video controls autoplay loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"> <source src="' + media_href + '"></video> <p>' + media_name + '</p></div>');
       }
     else {
