@@ -23,7 +23,7 @@ function mouseOutAction(e){
 
 const playOnHover = () => {
   $.getScript('js/jquery.hoverIntent.js', function(){
-    $('.lightbox_trigger').hoverIntent(function(){mouseOverAction($(this))}, function(){mouseOutAction($(this))});    
+    $('.lightbox_trigger').hoverIntent(function(){mouseOverAction($(this))}, function(){mouseOutAction($(this))});
   });
 }
 
