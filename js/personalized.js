@@ -134,7 +134,7 @@ $('.lightbox_trigger').click(function(e) {
       $('#lightbox-content').html('<iframe src="https://www.youtube.com/embed/' + media_name + '?rel=0&mute=1&modestbranding=1&autohide=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
     else if(item[0].tagName.toLowerCase() == "video") {
-      $('#lightbox-content').html('<div id="lightbox-v-overlay"><video controls loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="videos/gallery/' + media_name + '.webm" type="video/webM"><source src="videos/gallery/' + media_name + '.ogv" type="video/ogg"><source src="' + media_href + '" type="video/mp4""></video><p>' + media_name + '</p></div>');
+      $('#lightbox-content').html('<div id="lightbox-v-overlay"><video controls muted loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="videos/gallery/' + media_name + '.webm" type="video/webM"><source src="videos/gallery/' + media_name + '.ogv" type="video/ogg"><source src="' + media_href + '" type="video/mp4""></video><p>' + media_name + '</p></div>');
     }
     $('#lightbox').hide();
     enableScrolling();

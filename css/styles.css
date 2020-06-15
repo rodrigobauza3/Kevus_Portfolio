@@ -96,6 +96,7 @@
   .section-about .about-banner{
     position: relative;
     display: flex;
+    display:-webkit-flex;
     margin: 0 auto;
   }
   .section-about .container{
