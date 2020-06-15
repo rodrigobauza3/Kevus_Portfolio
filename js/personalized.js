@@ -113,10 +113,10 @@ $('.lightbox_trigger').click(function(e) {
   else {
     var lightbox
     
-    if(item[0].tagName.toLowerCase() == "iframe") {
+    if(item[0].tagName.toLowerCase() == "iframe" || item[0].className == "yt-video") {
       lightbox = vidBuilder(media_name);
     }
-    else if (item[0].tagName.toLowerCase() == "video"){
+    else if (item[0].tagName.toLowerCase() == "video" || item[0].className == "lc-video"){
       lightbox = vidLocalBuilder(media_href, media_name);
     }
     else {
