@@ -74,7 +74,7 @@
   @media(max-width:768px){
     .h-title{
       top: 30%;
-      left: 10%;
+      left: 10% !important;
       font-size: 4.5vw;
     }
     .h-link{
