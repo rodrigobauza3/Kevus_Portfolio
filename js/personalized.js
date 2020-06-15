@@ -3,8 +3,8 @@ function mouseOverAction(e){
   if (e.children()[0].className == "yt-video"){
     e.html('<iframe height="'+ (e.children()[0].height - 0.41) +'" src="' + e.attr("href") + '?rel=0&autoplay=1&mute=1&modestbranding=1&autohide=1&loop=1&playlist=' + e.attr("href").split("/").pop().split(".")[0] + '" frameborder="0" allow="autoplay"></iframe>');
   }
-  else if (e.children()[0].className == "lc-video"){                                              //<source src="videos/gallery/' + media_name + '.ogg" type="video/ogg">
-    e.html('<video autoplay loop muted width="'+ e.children()[0].width +'" height="'+ e.children()[0].height +'"> <source src="' + e.attr("href") + '" type="video/mp4"><source src="videos/gallery/' + e.attr("href").split("/").pop().split(".")[0] + '.ogg" type="video/ogg"></video>');
+  else if (e.children()[0].className == "lc-video"){
+    e.html('<video autoplay loop muted width="'+ e.children()[0].width +'" height="'+ e.children()[0].height +'"><source src="' + e.attr("href") + '" type="video/mp4"><source src="videos/gallery/' + e.attr("href").split("/").pop().split(".")[0] + '.webm" type="video/webM"><source src="videos/gallery/' + e.attr("href").split("/").pop().split(".")[0] + '.ogv" type="video/ogg"></video>');
   }
 };
 
@@ -76,7 +76,7 @@ function vidLocalBuilder(src, title){
           '<div id="lightbox">' +
             '<div id="lightbox-content">' +
               '<div id="lightbox-v-overlay">' +
-                  '<video controls autoplay loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="' + src + '" type="video/mp4"><source src="videos/gallery/' + title + '.ogg" type="video/ogg"></video>' +
+                  '<video controls autoplay loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="' + src + '" type="video/mp4"><source src="videos/gallery/' + title + '.webm" type="video/webM"><source src="videos/gallery/' + title + '.ogv" type="video/ogg"></video>' +
                   '<p>' + title + '</p>' +
               '</div>' +
             '</div>' +
@@ -99,10 +99,10 @@ $('.lightbox_trigger').click(function(e) {
       $('#lightbox-content').html('<iframe src="https://www.youtube.com/embed/' + media_name + '?rel=0&autoplay=1&modestbranding=1&autohide=1&loop=1&playlist=' + media_name + '" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
     else if(item[0].tagName.toLowerCase() == "video" || item[0].className == "lc-video") {
-        $('#lightbox-content').html('<div id="lightbox-v-overlay"> <video controls autoplay loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="' + media_href + '" type="video/mp4""><source src="videos/gallery/' + media_name + '.ogg" type="video/ogg"></video><p>' + media_name + '</p></div>');
+        $('#lightbox-content').html('<div id="lightbox-v-overlay"><video controls autoplay loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="' + media_href + '" type="video/mp4""><source src="videos/gallery/' + media_name + '.webm" type="video/webM"><source src="videos/gallery/' + media_name + '.ogv" type="video/ogg"></video><p>' + media_name + '</p></div>');
       }
     else {
-      $('#lightbox-content').html('<div id="lightbox-overlay"> <img src="' + media_href + '"> <p>' + media_name + '</p></div>');
+      $('#lightbox-content').html('<div id="lightbox-overlay"><img src="' + media_href + '"> <p>' + media_name + '</p></div>');
     }
 
     disableRightClick();
@@ -134,7 +134,7 @@ $('.lightbox_trigger').click(function(e) {
       $('#lightbox-content').html('<iframe src="https://www.youtube.com/embed/' + media_name + '?rel=0&mute=1&modestbranding=1&autohide=1&controls=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
     else if(item[0].tagName.toLowerCase() == "video") {
-      $('#lightbox-content').html('<div id="lightbox-v-overlay"> <video controls muted> <source src="' + media_href + '"></video></div>');
+      $('#lightbox-content').html('<div id="lightbox-v-overlay"><video controls loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="' + media_href + '" type="video/mp4""><source src="videos/gallery/' + media_name + '.webm" type="video/webM"><source src="videos/gallery/' + media_name + '.ogv" type="video/ogg"></video><p>' + media_name + '</p></div>');
     }
     $('#lightbox').hide();
     enableScrolling();
