@@ -95,8 +95,6 @@
   }
   .section-about .about-banner{
     position: relative;
-    display: flex;
-    display:-webkit-flex;
     margin: 0 auto;
   }
   .section-about .container{
@@ -343,7 +341,8 @@
       max-width: 80%;
   }
     #lightbox iframe {
-      height: 35vw;       
+      height: 50vw;
+      max-width: 80%;     
     }
     #lightbox video {
       max-width: 80%;
