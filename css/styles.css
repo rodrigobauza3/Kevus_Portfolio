@@ -179,7 +179,7 @@
 }
 
 .gallery-item {
-    display: inline-block;
+    display: none;
     position: relative;
     background: #fff;
     margin: 0 0 0.6em;
@@ -187,20 +187,25 @@
     -webkit-transition:1s ease all;
     transition:1s ease all;
 }
-/* .more, .less {
+.more, .less {
   background-color: rgba(214, 16, 97, 1);
   clear: both;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
-  margin-top: 6px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 6px 0;
   text-align: center;
 	text-transform: uppercase;
-  width: 200px;
-  border-radius: 20px;
-} */
+  width: 30px;
+  border-radius: 30px;
+}
+.more:hover, .less:hover {
+  background-color: rgb(157,157,156);
+  color: black;
+}
 .gallery-item img{
     max-width:100%;
     pointer-events: none;

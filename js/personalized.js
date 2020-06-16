@@ -141,27 +141,27 @@ $('.lightbox_trigger').click(function(e) {
   });
 });
 
-// $(document).ready(function () {
-//   $('#gallery .gallery-item:lt(12)').show().css("display", "inline-block");
-//   $('.less').hide();
-//   var items = document.getElementsByTagName('div').length;
-//   var shown =  12;
-//   $('.more').click(function () {
-//       $('.less').show();
-//       shown = $('#gallery .gallery-item:visible').length+8;
-//       if(shown < items) {
-//         $('#gallery .gallery-item:lt('+shown+')').show(300).css("display", "inline-block");
-//       } else {
-//         $('#gallery .gallery-item:lt('+items+')').show(300).css("display", "inline-block");
-//         $('.more').hide();
-//       }
-//   });
-//   $('.less').click(function () {
-//       $('#gallery .gallery-item').not(':lt(12)').hide(300);
-//       $('.more').show();
-//       $('.less').hide();
-//   });
-// });
+$(document).ready(function () {
+  $('#gallery .gallery-item:lt(12)').show().css("display", "inline-block");
+  $('.less').hide();
+  var items = document.getElementsByClassName('gallery-item').length;
+  var shown =  12;
+  $('.more').click(function () {
+      $('.less').show();
+      shown = $('#gallery .gallery-item:visible').length+8;
+      if(shown < items) {
+        $('#gallery .gallery-item:lt('+shown+')').show(300).css("display", "inline-block");
+      } else {
+        $('#gallery .gallery-item:lt('+items+')').show(300).css("display", "inline-block");
+        $('.more').hide();
+      }
+  });
+  $('.less').click(function () {
+      $('#gallery .gallery-item').not(':lt(12)').hide(300);
+      $('.more').show();
+      $('.less').hide();
+  });
+});
 
 addEventListener("load", disableRightClick);
 addEventListener("load", playOnHover);
