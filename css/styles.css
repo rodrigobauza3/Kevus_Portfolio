@@ -31,10 +31,10 @@
     clear: both;
   }
   .container{
-    max-width: 1280px;
+    /* max-width: 1280px; */
     padding-left: 1.5em !important;
     padding-right: 1.5em !important;
-    margin: 0 auto !important;
+    /* margin: 0 auto !important; */
     text-align: center;
   }
   .fullscreen-video-wrap{
@@ -194,7 +194,6 @@
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
-  margin-top: 1em;
   margin-bottom: 1em;
   padding: 6px 0;
   text-align: center;

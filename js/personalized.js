@@ -148,7 +148,7 @@ $(document).ready(function () {
   var shown =  26;
   $('.more').click(function () {
       $('.less').show();
-      shown = $('#gallery .gallery-item:visible').length+8;
+      shown = $('#gallery .gallery-item:visible').length+16;
       if(shown < items) {
         $('#gallery .gallery-item:lt('+shown+')').show(300).css("display", "inline-block");
       } else {
