@@ -179,7 +179,7 @@
 }
 
 .gallery-item {
-    display: none;
+    display: inline-block;
     position: relative;
     background: #fff;
     margin: 0 0 0.6em;
@@ -187,7 +187,7 @@
     -webkit-transition:1s ease all;
     transition:1s ease all;
 }
-.more, .less {
+/* .more, .less {
   background-color: rgba(214, 16, 97, 1);
   clear: both;
   color: #fff;
@@ -200,7 +200,7 @@
 	text-transform: uppercase;
   width: 200px;
   border-radius: 20px;
-}
+} */
 .gallery-item img{
     max-width:100%;
     pointer-events: none;
