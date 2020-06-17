@@ -146,6 +146,8 @@ $(document).ready(function () {
   $('.less').hide();
   var items = document.getElementsByClassName('gallery-item').length;
   var shown =  26;
+  var url = location.href;               //Save down the URL without hash.
+  location.href = "#gallery-container";
   $('.more').click(function () {
       $('.less').show();
       shown = $('#gallery .gallery-item:visible').length+16;
@@ -157,6 +159,7 @@ $(document).ready(function () {
       }
   });
   $('.less').click(function () {
+      history.replaceState(null,null,url);
       $('#gallery .gallery-item').not(':lt(26)').hide(300);
       $('.more').show();
       $('.less').hide();
