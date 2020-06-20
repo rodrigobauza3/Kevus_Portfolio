@@ -1,5 +1,4 @@
-function mouseOverAction(e){
-  
+function mouseOverAction(e){  
   if (e.children()[0].className == "yt-video"){
     e.html('<iframe height="'+ (e.children()[0].height - 0.41) +'" src="' + e.attr("href") + '?rel=0&autoplay=1&mute=1&modestbranding=1&autohide=1&loop=1&playlist=' + e.attr("href").split("/").pop().split(".")[0] + '" frameborder="0" allow="autoplay"></iframe>');
   }
@@ -60,7 +59,7 @@ function imgBuilder(src, title){
               '</div>' +
             '</div>' +
           '</div>';
-          return lightbox;
+  return lightbox;
 }  
 function vidBuilder(vidID){
   var lightbox = 
@@ -69,7 +68,7 @@ function vidBuilder(vidID){
               '<iframe src="https://www.youtube.com/embed/' + vidID + '?rel=0&autoplay=1&modestbranding=1&autohide=1&loop=1&playlist=' + vidID + '" frameborder="0" allow="autoplay" allowfullscreen></iframe>' +
             '</div>' +
           '</div>';
-          return lightbox;
+  return lightbox;
 }
 function vidLocalBuilder(src, title){
   var lightbox = 
@@ -81,7 +80,7 @@ function vidLocalBuilder(src, title){
               '</div>' +
             '</div>' +
           '</div>';
-          return lightbox;
+  return lightbox;
 }
     
 $('.lightbox_trigger').click(function(e) {
@@ -94,25 +93,21 @@ $('.lightbox_trigger').click(function(e) {
   var item = $(this).children();
  
   if ($('#lightbox').length > 0) {
-
     if(item[0].tagName.toLowerCase() == "iframe" || item[0].className == "yt-video") {
       $('#lightbox-content').html('<iframe src="https://www.youtube.com/embed/' + media_name + '?rel=0&autoplay=1&modestbranding=1&autohide=1&loop=1&playlist=' + media_name + '" frameborder="0" allow="autoplay" allowfullscreen></iframe>');
     }
     else if(item[0].tagName.toLowerCase() == "video" || item[0].className == "lc-video") {
-        $('#lightbox-content').html('<div id="lightbox-v-overlay"><video controls autoplay loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="' + media_href + '" type="video/mp4""><source src="videos/gallery/' + media_name + '.webm" type="video/webM"><source src="videos/gallery/' + media_name + '.ogv" type="video/ogg"></video><p>' + media_name + '</p></div>');
-      }
+      $('#lightbox-content').html('<div id="lightbox-v-overlay"><video controls autoplay loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="' + media_href + '" type="video/mp4""><source src="videos/gallery/' + media_name + '.webm" type="video/webM"><source src="videos/gallery/' + media_name + '.ogv" type="video/ogg"></video><p>' + media_name + '</p></div>');
+    }
     else {
       $('#lightbox-content').html('<div id="lightbox-overlay"><img src="' + media_href + '"> <p>' + media_name + '</p></div>');
     }
-
     disableRightClick();
     disableScrolling();
-    $('#lightbox').show('fast');
-    
+    $('#lightbox').show('fast');    
   }
   else {
-    var lightbox
-    
+    var lightbox    
     if(item[0].tagName.toLowerCase() == "iframe" || item[0].className == "yt-video") {
       lightbox = vidBuilder(media_name);
     }
@@ -122,11 +117,9 @@ $('.lightbox_trigger').click(function(e) {
     else {
       lightbox = imgBuilder(media_href, media_name);
     }
-
     $('body').append(lightbox);
     disableRightClick();
     disableScrolling();
-    // $('#lightbox').show('fast');
   }
 
   $('body').on('click', "#lightbox", function() {
@@ -152,7 +145,8 @@ $(document).ready(function () {
       shown = $('#gallery .gallery-item:visible').length+16;
       if(shown < items) {
         $('#gallery .gallery-item:lt('+shown+')').show(300).css("display", "inline-block");
-      } else {
+      } 
+      else {
         $('#gallery .gallery-item:lt('+items+')').show(300).css("display", "inline-block");
         $('.more').hide();
       }
@@ -183,6 +177,13 @@ function resizeAllGridItems(){
 function resizeInstance(instance){
   item = instance.elements[0];
   resizeGridItem(item);
+}
+
+var galleryItems = document.getElementsByClassName("gallery-item");
+for (var i = 0; i < galleryItems.length; i++) {
+  galleryItems[i].addEventListener("auxclick", (event) => {
+    if (event.button === 1) event.preventDefault();
+  });
 }
 
 window.onload = resizeAllGridItems();
