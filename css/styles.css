@@ -167,12 +167,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .masonry-layout {
-  -webkit-column-count: 5;
-  -moz-column-count:5;
-  column-count: 5;
-  -webkit-column-gap: .6em;
-  -moz-column-gap: .6em;
-  column-gap: .6em;
+  display: grid;
+  grid-column-gap: 0.7em !important;
+  grid-row-gap: 0.7em !important;
+  grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
+  grid-auto-rows: 0.6em;
+
   margin: 1.5em;
   padding: 0;
   background-color: black;
@@ -181,7 +181,7 @@ body::-webkit-scrollbar-thumb {
 .gallery-item {
   display: none;
   position: relative;
-  background: #fff;
+  background: black;
   margin: 0 0 0.6em;
   width: 100%;
   -webkit-transition:1s ease all;
@@ -232,7 +232,7 @@ body::-webkit-scrollbar-thumb {
 }
 .lightbox_trigger .yt-video{
   margin: 0 auto;
-  height: 149.6px;
+  height: auto !important;
 }
 .lightbox_trigger .video-play{
   position: absolute;
@@ -323,11 +323,6 @@ body::-webkit-scrollbar-thumb {
   z-index: 20;
 }
 @media only screen and (max-width: 320px) {
-  .masonry-layout {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1;
-  }
   #lightbox-overlay {
     margin: 0 1em;
   }
@@ -346,11 +341,6 @@ body::-webkit-scrollbar-thumb {
     width: 100%; */
     height: 100vh;
     object-fit: cover;
-  }
-  .masonry-layout {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2;
   }
   #lightbox-overlay {
     margin: 0 1em;
@@ -373,11 +363,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 1100px){
-  .masonry-layout {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
-  }
   #lightbox-overlay {
       margin: 0 1em;
       max-width: 90%;
@@ -394,11 +379,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media only screen and (min-width: 1101px) and (max-width: 1366px){
-  .masonry-layout {
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
-  }
   #lightbox-overlay {
     margin: 0 1em;
     max-width: 90%;
@@ -408,11 +388,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media only screen and (min-width: 1366px){
-  .masonry-layout {
-    -moz-column-count: 5;
-    -webkit-column-count: 5;
-    column-count: 5;
-  }
   #lightbox-overlay {
     margin: 0 1em;
     max-width: 90%;
@@ -579,5 +554,9 @@ body::-webkit-scrollbar-thumb {
   }
   .cpr{
     font-size: 0.7rem;
+  }  
+  #lightbox video {
+    height: auto;
+    max-height: 80vh;
   }
 }
