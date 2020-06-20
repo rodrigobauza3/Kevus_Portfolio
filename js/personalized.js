@@ -156,14 +156,36 @@ $(document).ready(function () {
         $('#gallery .gallery-item:lt('+items+')').show(300).css("display", "inline-block");
         $('.more').hide();
       }
+      resizeAllGridItems();
   });
   $('.less').click(function () {
       document.getElementById(anchor).scrollIntoView();
       $('#gallery .gallery-item').not(':lt(26)').hide(300);
       $('.more').show();
       $('.less').hide();
+      resizeAllGridItems();
   });
 });
 
+function resizeGridItem(item){
+  grid = document.getElementsByClassName("masonry-layout")[0];
+  rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+  rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+  rowSpan = Math.trunc(($($(item).children()[0]).children()[0].height+rowGap)/(rowHeight+rowGap));
+  item.style.gridRowEnd = "span "+rowSpan;
+}
+function resizeAllGridItems(){
+  allItems = document.getElementsByClassName("gallery-item");
+  for(x=0;x<allItems.length;x++){
+    imagesLoaded(allItems[x], resizeInstance);
+  }
+}
+function resizeInstance(instance){
+  item = instance.elements[0];
+  resizeGridItem(item);
+}
+
+window.onload = resizeAllGridItems();
+addEventListener("resize", resizeAllGridItems);
 addEventListener("load", disableRightClick);
 addEventListener("load", playOnHover);
