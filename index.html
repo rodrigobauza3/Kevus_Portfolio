@@ -25,14 +25,14 @@
   <link href="css/styles.css" rel="stylesheet">
  
   <!-- JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="js/imagesloaded.pkgd.js"></script>
-  <script src="js/jquery.hoverIntent.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" async></script>
+  <script src="js/imagesloaded.pkgd.js" defer></script>
+  <script src="js/jquery.hoverIntent.js" defer></script>
   
   <!-- Custom Scripts -->
-  <link rel="preload" href="css/styles.css" as="style">
   <link rel="preload" href="css/fonts/Varela-Round.css" as="style">
   <link rel="preload" href="css/fonts/Nunito.css" as="style">
+  <link rel="preload" href="css/styles.css" as="style">
   
 </head>
 
@@ -53,6 +53,7 @@
     </div>
 </header>
 
+<main>
 <section class="section section-about">
   <div class="about-banner">
     <img src="img/banner iconos3.png" alt="" class="">
@@ -688,9 +689,10 @@
     </div>
   </section>
 </div>
+</main>
 
   <!-- Custom scripts for this template -->
-  <script src="js/personalized.js"></script>
+  <script src="js/personalized.js" async></script>
 
 </body>
 
