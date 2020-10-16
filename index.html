@@ -25,14 +25,14 @@
   <link href="css/styles.css" rel="stylesheet">
  
   <!-- JQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/imagesloaded.pkgd.js"></script>
   <script src="js/jquery.hoverIntent.js"></script>
   
   <!-- Custom Scripts -->
-  <link rel="preload" href="css/styles.css" as="style">
   <link rel="preload" href="css/fonts/Varela-Round.css" as="style">
   <link rel="preload" href="css/fonts/Nunito.css" as="style">
+  <link rel="preload" href="css/styles.css" as="style">
   
 </head>
 
@@ -42,8 +42,8 @@
     <div class="fullscreen-video-wrap">
         <video class="videoBg" poster="img/bgn_video_home.jpg" autoplay loop muted>
           <source src="videos/bg-hero.mp4" type="video/mp4">
-          <source src="videos/bg-hero.webm" type="video/webM">
-          <source src="videos/bg-hero.ogv" type="video/ogg">
+          <!-- <source src="videos/bg-hero.webm" type="video/webM">
+          <source src="videos/bg-hero.ogv" type="video/ogg"> -->
         </video>
     </div>
     <!-- <div class="header-overlay"></div> -->
@@ -53,6 +53,7 @@
     </div>
 </header>
 
+<main>
 <section class="section section-about">
   <div class="about-banner">
     <img src="img/banner iconos3.png" alt="" class="">
@@ -60,8 +61,8 @@
   <div class="bio-video container">
     <video class="video-fluid z-depth-1" poster="img/bgn_bio_video.jpg" autoplay loop muted>
         <source src="videos/bio_video.mp4" type="video/mp4">
-        <source src="videos/bio_video.webm" type="video/webM">
-        <source src="videos/bio_video.ogv" type="video/ogg">
+        <!-- <source src="videos/bio_video.webm" type="video/webM">
+        <source src="videos/bio_video.ogv" type="video/ogg"> -->
     </video>
   </div>
 </section>
@@ -625,8 +626,8 @@
         <div class="fullscreen-footer-video-wrap">
             <video class="videoBg-footer" poster="img/bgn_video_footer.jpg" autoplay loop muted> 
                 <source src="videos/bg-contact.mp4" type="video/mp4">
-                <source src="videos/bg-contact.webm" type="video/webM">
-                <source src="videos/bg-contact.ogv" type="video/ogg">
+                <!-- <source src="videos/bg-contact.webm" type="video/webM">
+                <source src="videos/bg-contact.ogv" type="video/ogg"> -->
             </video>
         </div>
         <div class="contact-elements">
@@ -688,6 +689,7 @@
     </div>
   </section>
 </div>
+</main>
 
   <!-- Custom scripts for this template -->
   <script src="js/personalized.js"></script>
