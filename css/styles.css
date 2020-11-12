@@ -156,6 +156,7 @@ body::-webkit-scrollbar-thumb {
   color:#fff;
   flex-direction: column;
   min-height: 100vh;
+  margin-bottom: 2em;
 }
 .gallery-title{
   font-weight: normal;
@@ -189,18 +190,38 @@ body::-webkit-scrollbar-thumb {
   clear: both;
   cursor: pointer;
   display: inline-block;
-  font-size: 14px;
+  font-size: 25px;
   margin-bottom: 1em;
-  padding: 6px 0;
+  padding: 0.3% 0;
   text-align: center;
 	text-transform: uppercase;
-  width: 30px;
-  border-radius: 30px;
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
 }
 .more:hover, .less:hover {
   background-color: rgba(0, 17, 230, 1);
   clear: both;
   color: #fff;
+}
+.clients-title{
+  font-weight: normal;
+  font-size: 2em;
+  padding-top: 1em;
+}
+.clients-links{
+  margin: 0 15em;
+}
+.clients-links > a, a:visited{
+  font-weight: normal;
+  font-size: 1.5em;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 3em 0;
+}
+.clients-links > a:hover{
+  color: blue;
 }
 .gallery-item img{
   max-width:100%;
