@@ -454,7 +454,7 @@ body::-webkit-scrollbar-thumb {
   padding: 4px;
 }
 .c-mail:hover{
-  color: rgb(0, 17, 230);
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 .buttons{
@@ -521,7 +521,7 @@ body::-webkit-scrollbar-thumb {
   color: rgb(255, 2, 255)
 }
 .cpr:hover{
-  color: rgb(0,17,230);
+  color: rgb(255,255,255);
   font-weight: bold;
 }
 @media(min-aspect-ratio: 16/9){ /* //Wide// */
