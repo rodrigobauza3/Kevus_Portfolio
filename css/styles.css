@@ -449,14 +449,11 @@ body::-webkit-scrollbar-thumb {
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   font-size: 0.9em;
-  color: rgb(255, 2, 255);
+  color: rgb(0, 0, 0);
   font-weight: 900;
-  background-color: rgba(0, 17, 230, 1);
   padding: 4px;
-  border-radius: 15px;
 }
 .c-mail:hover{
-  background-color: rgb(255,2,255);
   color: rgb(0, 17, 230);
   font-weight: bold;
 }
