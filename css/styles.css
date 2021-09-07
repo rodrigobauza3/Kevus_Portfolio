@@ -518,15 +518,12 @@ body::-webkit-scrollbar-thumb {
   margin-right: -50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  background-color: rgba(0, 17, 230, 1);
   padding: 4px;
-  border-radius: 15px;
   font-size: 0.75rem;
   font-weight: bold;
   color: rgb(255, 2, 255)
 }
 .cpr:hover{
-  background-color: rgb(255,2,255);
   color: rgb(0,17,230);
   font-weight: bold;
 }
