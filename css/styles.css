@@ -58,9 +58,8 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   text-align: left;
   font-size: 5vw;
-  font-weight: bold;
+  font-weight: ;
   color: blue;
-  text-decoration: underline;
 }
 .h-body{
   position: absolute;
