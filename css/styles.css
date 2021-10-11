@@ -14,14 +14,14 @@ body{
 }
 body::-webkit-scrollbar {
   width: 0.2em;
-} 
+}
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }  
 body::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 17, 230, 1);;
-  outline: 1px solid rgba(0, 17, 230, 1);;
+  background-color: rgb(255, 255, 255);
+  outline: 1px solid rgb(255, 255, 255);
 }
 .v-header{
   height: 100vh;
@@ -58,7 +58,7 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   text-align: left;
   font-size: 5vw;
-  font-weight: ;
+  /* font-weight: ; */
   color: blue;
 }
 .h-body{
@@ -161,7 +161,8 @@ body::-webkit-scrollbar-thumb {
   font-weight: normal;
   font-size: 2em;
   padding-top: 1em;
-  padding-bottom: 1em;
+  padding-bottom: 0.7em;
+  margin-bottom: 0;
 }
 /* Massonry Gallery Start */
 .masonry-layout {
@@ -169,16 +170,31 @@ body::-webkit-scrollbar-thumb {
   grid-column-gap: 0.7em !important;
   grid-row-gap: 0.7em !important;
   grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
-  grid-auto-rows: 0.6em;
+  grid-auto-rows: 0.62em;
+  grid-auto-flow: dense;
   margin: 1.5em;
   padding: 0;
   background-color: black;
+}
+.filters-container{
+  padding-bottom: 0.7em;
+}
+.btn.filter-button{
+  border:0;
+  background: none;
+  color:white;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.7em;
+}
+.btn.filter-button.active{
+  text-decoration: line-through;
 }
 .gallery-item {
   display: none;
   position: relative;
   background: black;
-  margin: 0 0 0.6em;
+  /*margin: 0 0 0.6em;*/
   width: 100%;
   -webkit-transition:1s ease all;
   transition:1s ease all;
