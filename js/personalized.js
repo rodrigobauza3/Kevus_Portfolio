@@ -173,7 +173,7 @@ $('.lightbox_trigger').click(function(e) {
 });
 
 $(document).ready(function () {
-  $('#gallery .gallery-item:lt(26)').show(1400).css("display", "inline-block");
+  $('#gallery .gallery-item:lt(26)').show(300).css("display", "inline-block");
   $('.less').hide();
   var active = document.getElementsByClassName('filter-button active')[0].attributes[1].value;
   var items = document.getElementsByClassName('gallery-item').length;
