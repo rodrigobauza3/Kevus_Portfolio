@@ -193,10 +193,10 @@ $(document).ready(function () {
     if(active == "all"){ 
       shown = $('#gallery .gallery-item:visible').length+16;
       if(shown < items) {
-        $('#gallery .gallery-item:lt('+shown+')').show(1400).css("display", "inline-block");
+        $('#gallery .gallery-item:lt('+shown+')').show(300).css("display", "inline-block");
       } 
       else {
-        $('#gallery .gallery-item:lt('+items+')').show(1400).css("display", "inline-block");
+        $('#gallery .gallery-item:lt('+items+')').show(300).css("display", "inline-block");
         $('.more').hide();
       }
     }
@@ -204,10 +204,10 @@ $(document).ready(function () {
       itemsAct = $('#gallery .gallery-item').filter('.'+active).length;
       shown = $('#gallery .gallery-item:visible').filter('.'+active).length+16;
       if(shown < itemsAct) {
-        $('#gallery .gallery-item').filter('.'+active+':lt('+shown+')').show(1400).css("display", "inline-block");
+        $('#gallery .gallery-item').filter('.'+active+':lt('+shown+')').show(300).css("display", "inline-block");
       } 
       else {
-        $('#gallery .gallery-item').filter('.'+active+':lt('+itemsAct+')').show(1400).css("display", "inline-block");
+        $('#gallery .gallery-item').filter('.'+active+':lt('+itemsAct+')').show(300).css("display", "inline-block");
         $('.more').hide();
       }
     }
@@ -224,31 +224,32 @@ $(document).ready(function () {
 
   /*********Filters handling*********/
   $(".filter-button").click(function(){    
-    $('#gallery .gallery-item:visible').hide("fast");
+    
     $(".filter-button").removeClass("active");
     $(this).addClass("active");
 
     var value = $(this).attr('data-filter');
     active = $(this).attr('data-filter');
-          
+    
+    $('#gallery .gallery-item:visible').hide(300);      
     if(value == "all"){
       if(shown < items) {
-        $('#gallery .gallery-item:lt(26)').show(1400).css("display", "inline-block");
+        $('#gallery .gallery-item:lt(26)').show(300).css("display", "inline-block");
         $('.more').show();
       } 
       else {
-        $('#gallery .gallery-item:lt('+items+')').show(1400).css("display", "inline-block");
+        $('#gallery .gallery-item:lt('+items+')').show(300).css("display", "inline-block");
         $('.more').hide();
       }
     }
     else
     {
       if(shown < items) {
-        $(".filter").not('.'+value).hide("fast");
-        $('#gallery .gallery-item').filter('.'+value+':lt('+shown+')').show(1400).css("display", "inline-block");
+        $(".filter").not('.'+value).hide(300);
+        $('#gallery .gallery-item').filter('.'+value+':lt('+shown+')').show(300).css("display", "inline-block");
       } 
       else {
-        $('#gallery .gallery-item').filter('.'+value+':lt('+items+')').show(1400).css("display", "inline-block");
+        $('#gallery .gallery-item').filter('.'+value+':lt('+items+')').show(300).css("display", "inline-block");
         $('.more').hide();
       }        
     }
