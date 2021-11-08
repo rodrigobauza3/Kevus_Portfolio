@@ -27,7 +27,7 @@ body::-webkit-scrollbar-thumb {
   height: 100vh;
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #000;
   clear: both;
 }
 .container{
@@ -215,7 +215,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 25px;
 }
 .more:hover, .less:hover {
-  background-color: rgba(0, 17, 230, 1);
+  background-color: rgba(154, 18, 179, 1);
   clear: both;
   color: #fff;
 }
