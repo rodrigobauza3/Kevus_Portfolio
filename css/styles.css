@@ -458,23 +458,23 @@ body::-webkit-scrollbar-thumb {
 }
 .c-mail{
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 49.5vw;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   font-size: 0.9em;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: 900;
   padding: 4px;
 }
 .c-mail:hover{
-  color: rgb(255, 255, 255);
+  color: rgb(240, 7, 36);
   font-weight: bold;
 }
 .buttons{
   position: absolute;
-  top: 50%;
+  top: 75%;
   left: 49.5vw;
   margin-right: -50%;
   transform: translate(-50%, -50%);
