@@ -27,7 +27,7 @@ body::-webkit-scrollbar-thumb {
   height: 100vh;
   display: flex;
   align-items: center;
-  color: #000;
+  color: #FFF;
   clear: both;
 }
 .container{
