@@ -215,7 +215,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 25px;
 }
 .more:hover, .less:hover {
-  background-color: rgba(154, 18, 179, 1);
+  background-color: red;
   clear: both;
   color: #fff;
 }
@@ -236,7 +236,7 @@ body::-webkit-scrollbar-thumb {
   margin: 3em 0;
 }
 .clients-links > a:hover{
-  color: blue;
+  color: red;
 }
 .gallery-item img{
   max-width:100%;
@@ -469,7 +469,7 @@ body::-webkit-scrollbar-thumb {
   padding: 4px;
 }
 .c-mail:hover{
-  color: rgb(240, 7, 36);
+  color: red;
   font-weight: bold;
 }
 .buttons{
