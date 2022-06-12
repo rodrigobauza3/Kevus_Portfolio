@@ -6,7 +6,7 @@
 body{
   margin:0;
   overflow-x: hidden;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'DIN Next LT Pro', Bold, monospace;
   color: white;
   align-items: center;
   justify-content: center;
@@ -184,7 +184,7 @@ body::-webkit-scrollbar-thumb {
   background: none;
   color:white;
   cursor: pointer;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'DIN Next LT Pro', bold, monospace;
   font-size: 1.7em;
 }
 .btn.filter-button.active{
