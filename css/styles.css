@@ -6,7 +6,8 @@
 body{
   margin:0;
   overflow-x: hidden;
-  font-family: 'DIN Next LT Pro', Bold, monospace;
+  font-family: 'AlumniSans-Thin', Bold, monospace;
+  letter-spacing: .1rem;
   color: white;
   align-items: center;
   justify-content: center;
@@ -184,8 +185,9 @@ body::-webkit-scrollbar-thumb {
   background: none;
   color:white;
   cursor: pointer;
-  font-family: 'DIN Next LT Pro', bold, monospace;
+  font-family: 'SFSquareHead-Bold', bold, monospace;
   font-size: 1.7em;
+  letter-spacing: .2rem;
 }
 .btn.filter-button.active{
   text-decoration: line-through;
@@ -220,8 +222,9 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
 }
 .clients-title{
+  font-family: 'AlumniSans-Thin'
   font-weight: normal;
-  font-size: 2em;
+  font-size: 3em;
   padding-top: 1em;
 }
 .clients-links{
@@ -229,10 +232,9 @@ body::-webkit-scrollbar-thumb {
 }
 .clients-links > a, a:visited{
   font-weight: normal;
-  font-size: 1.2em;
+  font-size: 2em;
   color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
   margin: 3em 0;
 }
 .clients-links > a:hover{
