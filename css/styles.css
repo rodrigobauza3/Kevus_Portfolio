@@ -532,8 +532,8 @@ body::-webkit-scrollbar-thumb {
   margin-right: -50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  padding: 20px;
-  font-size: 0.75rem;
+  padding: 10px;
+  font-size: 1rem;
   font-weight: light;
   color: rgb(255,255,255)
 }
