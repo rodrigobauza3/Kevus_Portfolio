@@ -179,6 +179,7 @@ body::-webkit-scrollbar-thumb {
 }
 .filters-container{
   padding-bottom: 0.7em;
+  font-size: 2em;
 }
 .btn.filter-button{
   border:0;
@@ -220,6 +221,11 @@ body::-webkit-scrollbar-thumb {
   background-color: red;
   clear: both;
   color: #fff;
+}
+.keinefotos{
+  font-size: 15em;
+  text-align: justify-all;
+  line-height: 0.85em;
 }
 .clients-title{
   font-family: 'AlumniSans-Thin'
@@ -450,8 +456,9 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
 }
 .videoBg-footer{
-  width: 100%;
-  min-height: 100vh;
+  padding: 50px;
+  width: 75%;
+  min-height: 75vh;
   object-fit: fill;
 }
 .contact-elements{
@@ -460,12 +467,12 @@ body::-webkit-scrollbar-thumb {
 }
 .c-mail{
   position: absolute;
-  top: 15%;
+  top: 5%;
   left: 49.5vw;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  font-size: 0.9em;
+  font-size: 2em;
   color: rgb(255, 255, 255);
   font-weight: light;
   padding: 4px;
