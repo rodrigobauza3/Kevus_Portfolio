@@ -185,7 +185,7 @@ body::-webkit-scrollbar-thumb {
   background: none;
   color:white;
   cursor: pointer;
-  font-family: 'SFSquareHead-Bold', bold, monospace;
+  font-family: 'AlumniSans-Thin', bold, monospace;
   font-size: 1.7em;
   letter-spacing: .2rem;
 }
