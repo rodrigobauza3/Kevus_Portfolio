@@ -251,7 +251,7 @@ body::-webkit-scrollbar-thumb {
 .description{
   font-size: 5em;
   text-align: justify-all;
-  line-height: 0.8em;
+  line-height: 1em;
 }
 .gallery-item img{
   max-width:100%;
