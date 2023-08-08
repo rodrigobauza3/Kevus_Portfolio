@@ -191,7 +191,8 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: .2rem;
 }
 .btn.filter-button.active{
-  text-decoration: line-through;
+  font-weight: bold;
+  color: red;
 }
 .gallery-item {
   display: none;
@@ -245,6 +246,12 @@ body::-webkit-scrollbar-thumb {
 }
 .clients-links > a:hover{
   color: red;
+  font-weight: bold;
+}
+.description{
+  font-size: 5em;
+  text-align: justify-all;
+  line-height: 0.8em;
 }
 .gallery-item img{
   max-width:100%;
@@ -547,6 +554,7 @@ body::-webkit-scrollbar-thumb {
 .cpr:hover{
   color: rgb(255,255,255);
   font-weight: bold;
+  color: red;
 }
 @media(min-aspect-ratio: 16/9){ /* //Wide// */
   .videoBg{
