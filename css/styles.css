@@ -5,6 +5,7 @@
 }  
 body{
   margin:0;
+  padding: 0;
   overflow-x: hidden;
   font-family: 'Prompt-SemiBold', Bold, monospace;
   letter-spacing: .1rem;
@@ -157,6 +158,10 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   min-height: 100vh;
   margin-bottom: 2em;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
 }
 .gallery-title{
   font-weight: normal;
@@ -386,6 +391,7 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (min-width: 321px) and (max-width: 768px){
   .videoBg{
     height: 100vh;
+    height: auto;
     object-fit: cover;
   }
   #lightbox-overlay {
