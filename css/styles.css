@@ -6,7 +6,7 @@
 body{
   margin:0;
   overflow-x: hidden;
-  font-family: 'AlumniSans-Thin', Bold, monospace;
+  font-family: 'Prompt-SemiBold', Bold, monospace;
   letter-spacing: .1rem;
   color: white;
   align-items: center;
@@ -170,12 +170,13 @@ body::-webkit-scrollbar-thumb {
   display: grid;
   grid-column-gap: 0.7em !important;
   grid-row-gap: 0.7em !important;
-  grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
+  grid-template-columns: repeat;
   grid-auto-rows: 0.62em;
   grid-auto-flow: dense;
   margin: 1.5em;
   padding: 0;
   background-color: black;
+
 }
 .filters-container{
   padding-bottom: 0.7em;
@@ -186,13 +187,13 @@ body::-webkit-scrollbar-thumb {
   background: none;
   color:white;
   cursor: pointer;
-  font-family: 'AlumniSans-Thin', bold, monospace;
+  font-family: 'ArchivoBlack-Regular.tff', bold, monospace;
   font-size: 1.7em;
   letter-spacing: .2rem;
 }
 .btn.filter-button.active{
   font-weight: bold;
-  color: red;
+  color: white;
 }
 .gallery-item {
   display: none;
@@ -202,6 +203,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   -webkit-transition:1s ease all;
   transition:1s ease all;
+
 }
 .more, .less {
   background-color: rgb(157,157,156);
@@ -229,7 +231,7 @@ body::-webkit-scrollbar-thumb {
   line-height: 0.85em;
 }
 .clients-title{
-  font-family: 'AlumniSans-Thin'
+  font-family: 'ArchivoBlack-Regular'
   font-weight: lighter;
   font-size: 3em;
   padding-top: 1em;
@@ -464,9 +466,9 @@ body::-webkit-scrollbar-thumb {
 }
 .videoBg-footer{
   padding: 50px;
-  width: 75%;
-  min-height: 75vh;
+  width: 100%;
   object-fit: fill;
+
 }
 .contact-elements{
   display: inline-flex;
