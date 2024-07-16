@@ -7,11 +7,16 @@ function mouseOverAction(e){
   }
 };
 
-function mouseOverAction(e) {  
-  if (e.children()[0].className == "yt-video") {
-    e.html('<iframe height="'+ (e.children()[0].height - 0.41) +'" src="' + e.attr("href") + '?rel=0&mute=1&modestbranding=1&autohide=1&loop=1&playlist=' + e.attr("href").split("/").pop().split(".")[0] + '" frameborder="0"></iframe>');
-  } else if (e.children()[0].className == "lc-video") {
-    e.html('<video loop muted width="'+ e.children()[0].width +'" height="'+ e.children()[0].height +'"><source src="' + e.attr("href") + '" type="video/mp4"><source src="videos/gallery/' + e.attr("href").split("/").pop().split(".")[0] + '.webm" type="video/webM"><source src="videos/gallery/' + e.attr("href").split("/").pop().split(".")[0] + '.ogv" type="video/ogg"></video>');
+function mouseOutAction(e){
+  var img, id
+  if (e.children()[0].tagName.toLowerCase() == "iframe"){
+    id = e.children()[0].src.split("/").pop().split("?")[0];
+    e.html('<img src="https://img.youtube.com/vi/' + id + '/0.jpg" class="yt-video"><img src="img/play.png" class="video-play">');
+  }
+  else if (e.children()[0].tagName.toLowerCase() == "video"){
+    e.children()[0].pause();
+    img = e.children()[0].innerHTML.split("videos/gallery/").pop().split(".")[0];
+    e.html('<img width="'+ e.children()[0].width +'" height="'+ e.children()[0].height +'" src="videos/gallery/_thumbnail/' + img + '.png" class="lc-video"><img src="img/play.png" class="video-play">');
   }
 };
 
@@ -81,25 +86,25 @@ function imgBuilder(src, title){
           '</div>';
   return lightbox;
 }  
-function vidBuilder(vidID) {
+function vidBuilder(vidID){
   var lightbox = 
-    '<div id="lightbox">' +
-      '<div id="lightbox-content">' +
-        '<iframe src="https://www.youtube.com/embed/' + vidID + '?rel=0&modestbranding=1&autohide=1&loop=1&playlist=' + vidID + '" frameborder="0" allowfullscreen></iframe>' +
-      '</div>' +
-    '</div>';
+          '<div id="lightbox">' +
+            '<div id="lightbox-content">' +
+              '<iframe src="https://www.youtube.com/embed/' + vidID + '?rel=0&autoplay=1&modestbranding=1&autohide=1&loop=1&playlist=' + vidID + '" frameborder="0" allow="autoplay" allowfullscreen></iframe>' +
+            '</div>' +
+          '</div>';
   return lightbox;
 }
-function vidLocalBuilder(src, title) {
+function vidLocalBuilder(src, title){
   var lightbox = 
-    '<div id="lightbox">' +
-      '<div id="lightbox-content">' +
-        '<div id="lightbox-v-overlay">' +
-          '<video controls loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="' + src + '" type="video/mp4"><source src="videos/gallery/' + title + '.webm" type="video/webM"><source src="videos/gallery/' + title + '.ogv" type="video/ogg"></video>' +
-          '<p>' + title + '</p>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
+          '<div id="lightbox">' +
+            '<div id="lightbox-content">' +
+              '<div id="lightbox-v-overlay">' +
+                  '<video controls autoplay loop disablePictureInPicture oncontextmenu="return false;" controlsList="nodownload"><source src="' + src + '" type="video/mp4"><source src="videos/gallery/' + title + '.webm" type="video/webM"><source src="videos/gallery/' + title + '.ogv" type="video/ogg"></video>' +
+                  '<p>' + title + '</p>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
   return lightbox;
 }
     
