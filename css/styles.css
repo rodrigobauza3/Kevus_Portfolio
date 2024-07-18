@@ -553,11 +553,6 @@ body::-webkit-scrollbar-thumb {
   font-weight: light;
   color: rgb(255,255,255)
 }
-.cpr:hover{
-  color: rgb(255,255,255);
-  font-weight: bold;
-  color: red;
-}
 @media(min-aspect-ratio: 16/9){ /* //Wide// */
   .videoBg{
     width: 100%;
