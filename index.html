@@ -1,166 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anevenua</title>
+    <link rel="icon" href="img/icons/favicon.png" type="image/png"> <!-- Link to PNG favicon -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
 
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Visual artist Berlin based">
-  <meta property="og:url" content="https://www.anevenua.com/">
-  <meta property="og:title" content="Anevenua">
-  <meta property="og:description" content="Visual artist Berlin based">
-  <meta property="og:image" content="https://www.anevenua.com/img/vista previa.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1080">
-  <meta property="og:image:height" content="1080">
-  <link rel="icon" href="img/icons/favicon.png" type="image/png" sizes="32x32">
-  <title>anevenua</title>
-
-  <!-- Custom fonts for this template -->
-  <link href="css/fonts/Prompt-SemiBold.ttf" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/styles.css" rel="stylesheet">
- 
-  <!-- JQuery -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/imagesloaded.min.js"></script>
-  <script src="js/jquery.hoverIntent.js"></script>
-  
-  <!-- Custom Scripts -->
-  <link rel="preload" href="css/fonts/ArchivoBlack-Regular.css" as="style">
-  <link rel="preload" href="css/fonts/ArchivoBlack-Regular.css" as="style">
-  <link rel="preload" href="css/styles.css" as="style">
-  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        .carousel-container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            width: 500%; /* Adjust to fit all videos */
+            transition: transform 0.5s ease; /* Smooth transition */
+        }
+        .video-item {
+            flex-shrink: 0;
+            height: 100%;
+            width: 100vw;
+            background-color: black;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.5); /* White color with 50% opacity */
+            font-size: 16vw; /* Reduced font size */
+            font-weight: 700;
+            text-align: center;
+            z-index: 10;
+            max-width: 80%; /* Ensure title stays within screen borders */
+            white-space: normal; /* Allow text wrapping */
+            overflow-wrap: break-word; /* Break long words */
+        }
+        .description {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 300;
+            z-index: 10;
+        }
+        .copyright {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 300;
+            z-index: 10;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            pointer-events: none;
+        }
+        .nav-buttons button {
+            pointer-events: auto;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+        .audio-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none; /* Remove background */
+            border: none; /* Remove border */
+            color: white; /* White icon color */
+            font-size: 2rem; /* Adjust icon size */
+            cursor: pointer;
+            z-index: 10;
+        }
+        .audio-toggle:focus {
+            outline: none; /* Remove focus outline */
+        }
+    </style>
 </head>
-
-<body id="page-top">
-<!-- Video Header -->
-<header class="v-header container">
-    <div class="fullscreen-video-wrap">
-        <video class="videoBg" poster="img/bgn_video_home.jpg" autoplay loop muted>
-          <source src="videos/bg-hero.mp4" type="video/mp4">
-          <!-- <source src="videos/bg-hero.webm" type="video/webM">
-          <source src="videos/bg-hero.ogv" type="video/ogg"> -->
-        </video>
-    </div>
-    <!-- <div class="header-overlay"></div> -->
-    <div class="header-content">
-        
-             
-    </div>
-</header>
-
-<main>
-
-<section id="gallery-container" class="section-b">
-
-<!-- For PNG/JPG compression use https://compresspng.com/  -->
-<!-- For MP4 Compression use https://www.freeconvert.com/video-compressor/download -->
-<!-- For webM and OGV format conversion use Miro Video Converter -->
-
-  <div class="container">
-    <h2 class="gallery-title"></h2>
-
-    <div id="gallery__filters" class="filters-container">
-        <button class="btn filter-button active" data-filter="all">cases</button>
-    </div>
-
-    <div id="gallery" class="gallery masonry-layout">
-        
-        <div class="gallery-item filter all">
-            <a href="videos/gallery/Vodafone Deutschland - iPhone 15.mp4" class="lightbox_trigger">
-                <img src="videos/gallery/_thumbnail/bg3.jpg" class="lc-video">
-                <img src="img/play.png" class="video-play">
-            </a>
-        </div>
-
-        <div class="gallery-item filter all">
-            <a href="videos/gallery/Digital out of home.mp4" class="lightbox_trigger">
-                <img src="videos/gallery/_thumbnail/Digital out of home.jpg" class="lc-video">
-                <img src="img/play.png" class="video-play">
-            </a>
-        </div>
-
-        <div class="gallery-item filter all">
-            <a href="videos/gallery/american turister.mp4" class="lightbox_trigger">
-                <img src="videos/gallery/_thumbnail/american turister.jpg" class="lc-video">
-                <img src="img/play.png" class="video-play">
-            </a>
-        </div>
-
-        <div class="gallery-item filter all">
-            <a href="videos/gallery/unreal.mp4" class="lightbox_trigger">
-                <img src="videos/gallery/_thumbnail/unreal.jpg" class="lc-video">
-                <img src="img/play.png" class="video-play">
-            </a>
-        </div>
-
-        <div class="gallery-item filter all">
-            <a href="videos/gallery/keinefotos.mp4" class="lightbox_trigger">
-                <img src="videos/gallery/_thumbnail/keinefotos.jpg" class="lc-video">
-                <img src="img/play.png" class="video-play">
-            </a>
-        </div>
-
-
-  </div>
-    
-
-    <div class="clients">
-
-        <h1 class="description"> media content for marketing & artistics proyects.<h1>
-
-        <video class="videoBg-footer" poster="img/kunden.jpg" autoplay loop muted> 
-                <source src="videos/kunden.mp4" type="video/mp4">
-                <!-- <source src="videos/kunden.webm" type="video/webM">
-                <source src="videos/kunden.ogv" type="video/ogg"> -->
-            </video>
-
-    </div>
-</div>
-<!-- new gallery end -->
-</section>
-
-<div id="footer">
-  <section>
-    <div class="v-footer container">
-        <div class="fullscreen-footer-video-wrap">
-            <video class="videoBg-footer" poster="img/bgn_video_footer.jpg" autoplay loop muted> 
-                <source src="videos/bg-contact.mp4" type="video/mp4">
-                <!-- <source src="videos/bg-contact.webm" type="video/webM">
-                <source src="videos/bg-contact.ogv" type="video/ogg"> -->
+<body>
+    <div class="carousel-container" id="carousel">
+        <div class="video-item">
+            <div class="video-title">Digitals out of Home</div>
+            <video autoplay muted loop>
+                <source src="videos/gallery/Digital out of home.mp4" type="video/mp4">
+                <source src="videos/gallery/Digital out of home.webm" type="video/webm">
+                <source src="videos/gallery/Digital out of home.ogv" type="video/ogg">
+                Your browser does not support the video tag.
             </video>
         </div>
-        <div class="contact-elements">
-
-          <div class="buttons">
-
-            <a href="https://www.linkedin.com/in/anevenua" target="_blank">
-              <div class="flip3d">
-                <div class="front">
-                  <img src="img/icons/social-links/linkedin.png" class="social-media" alt="LinkedIn">
-                </div>
-                <div class="back">
-                  <img src="img/icons/social-links/hovers/linkedin.png" class="social-media" alt="LinkedIn">
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="cpr">copyright &copy; anevenua</div>
+        <div class="video-item">
+            <div class="video-title">UE5 Niagara & Metahumans</div>
+            <video autoplay muted loop>
+                <source src="videos/gallery/american turister.mp4" type="video/mp4">
+                <source src="videos/gallery/american turister.webm" type="video/webm">
+                <source src="videos/gallery/american turister.ogv" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-item">
+            <div class="video-title">UE5 Cinematics</div>
+            <video autoplay muted loop>
+                <source src="videos/gallery/unreal.mp4" type="video/mp4">
+                <source src="videos/gallery/unreal.webm" type="video/webm">
+                <source src="videos/gallery/unreal.ogv" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-item">
+            <div class="video-title">Keine Fotos</div>
+            <video autoplay muted loop>
+                <source src="videos/gallery/keinefotos.mp4" type="video/mp4">
+                <source src="videos/gallery/keinefotos.webm" type="video/webm">
+                <source src="videos/gallery/keinefotos.ogv" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-item">
+            <div class="video-title">AI Storyboard</div>
+            <video autoplay muted loop>
+                <source src="videos/gallery/Vodafone Deutschland - iPhone 15.mp4" type="video/mp4">
+                <source src="videos/gallery/Vodafone Deutschland - iPhone 15.webm" type="video/webm">
+                <source src="videos/gallery/Vodafone Deutschland - iPhone 15.ogv" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
-  </section>
-</div>
-</main>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/personalized.js"></script>
+    <div class="description">
+        media content for marketing & artistic projects
+    </div>
 
+    <div class="copyright">
+        copyright © anevenua 2024
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev">&lt;</button>
+        <button id="next">&gt;</button>
+    </div>
+
+    <button class="audio-toggle" id="audio-toggle">🔊</button> <!-- Audio toggle button -->
+
+    <script>
+        const carousel = document.getElementById('carousel');
+        const videos = document.querySelectorAll('video');
+        let currentIndex = 0;
+        const totalVideos = videos.length;
+
+        function updateCarousel(index) {
+            const offset = -index * 100;
+            carousel.style.transform = `translateX(${offset}vw)`;
+            stopAllVideos(); // Stop audio of all videos
+            videos[index].play(); // Play the audio of the current video
+        }
+
+        function stopAllVideos() {
+            videos.forEach(video => {
+                video.pause();
+                video.currentTime = 0; // Optionally reset playback position
+            });
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalVideos;
+            updateCarousel(currentIndex);
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalVideos) % totalVideos;
+            updateCarousel(currentIndex);
+        });
+
+        window.addEventListener('wheel', (event) => {
+            if (event.deltaY > 0) {
+                currentIndex = (currentIndex + 1) % totalVideos;
+            } else {
+                currentIndex = (currentIndex - 1 + totalVideos) % totalVideos;
+            }
+            updateCarousel(currentIndex);
+        });
+
+        document.getElementById('audio-toggle').addEventListener('click', () => {
+            const isMuted = videos[0].muted;
+            videos.forEach(video => {
+                video.muted = !isMuted;
+                if (!isMuted) {
+                    video.play(); // Ensure video continues playing when unmuted
+                }
+            });
+            document.getElementById('audio-toggle').textContent = isMuted ? '🔊' : '🔇'; // Toggle icon
+        });
+    </script>
 </body>
-
 </html>
