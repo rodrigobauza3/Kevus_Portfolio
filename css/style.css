@@ -2408,7 +2408,7 @@ filter: alpha(opacity=75);
     flex-wrap: wrap;         /* Allows items to move to new rows */
     gap: 400px 40px;               /* Space between video containers */
     margin: 0 auto;          /* Centers gallery on the page */
-    padding: 20px;           /* Adds padding around the gallery */
+    padding: 100px;           /* Adds padding around the gallery */
     justify-content: center; /* Center gallery content */
     align-items: flex-start; /* Align videos at the top of each row */
     margin-top: 20vh;
@@ -2417,7 +2417,7 @@ filter: alpha(opacity=75);
 /* Each video container settings */
 .video-works {
     /*flex: 1 1 45%;          /* Two videos per row; adjust to 30% for three per row */
-    flex-basis: 30%;
+    flex-basis: 45%;
     max-width: 600px;       /* Limit width of each video for consistency */
     position: relative;     /* Ensure positioning stays within container */
     box-sizing: border-box;
