@@ -2406,19 +2406,19 @@ filter: alpha(opacity=75);
 .legendary-gallery {
     display: flex;
     flex-wrap: wrap;         /* Allows items to move to new rows */
-    gap: 20px;               /* Space between video containers */
+    gap: 400px 40px;               /* Space between video containers */
     margin: 0 auto;          /* Centers gallery on the page */
     padding: 20px;           /* Adds padding around the gallery */
     justify-content: center; /* Center gallery content */
     align-items: flex-start; /* Align videos at the top of each row */
-    margin-top: 30vh;
+    margin-top: 20vh;
 }
 
 /* Each video container settings */
 .video-works {
     /*flex: 1 1 45%;          /* Two videos per row; adjust to 30% for three per row */
     flex-basis: 30%;
-    max-width: 500px;       /* Limit width of each video for consistency */
+    max-width: 600px;       /* Limit width of each video for consistency */
     position: relative;     /* Ensure positioning stays within container */
     box-sizing: border-box;
     padding: 10px;          /* Optional: space inside each container */
@@ -2443,7 +2443,7 @@ filter: alpha(opacity=75);
 .video-caption {
   position: absolute; /* Posiciona el caption sobre el video */
   font: inherit;
-  top: 15px;      /* Ajusta la distancia desde la parte superior */
+  top: 30px;      /* Ajusta la distancia desde la parte superior */
   left: 10px;        /* Ajusta la distancia desde la izquierda */
   z-index: 10;       /* AsegÃƒÂºrate de que estÃƒÂ© por encima del video */
   padding: 5px;      /* Espaciado alrededor del texto */
