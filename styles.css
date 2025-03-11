@@ -1,0 +1,10 @@
+h1.style-change-1 {
+  font-size: 10vw;
+  width: auto;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+header.style-change-2 {
+  width: 100%;
+}
