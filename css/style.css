@@ -240,7 +240,7 @@ background: #fff;
     -ms-transition: opacity 300ms cubic-bezier(0.77, 0, 0.175, 1);
      -o-transition: opacity 300ms cubic-bezier(0.77, 0, 0.175, 1);
         transition: opacity 300ms cubic-bezier(0.77, 0, 0.175, 1);
-z-index: 100;
+z-index: auto;
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -2405,56 +2405,15 @@ filter: alpha(opacity=75);
 /* Gallery container settings to control layout and spacing */
 .legendary-gallery {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;         /* Allows items to move to new rows */
-    gap: 400px 40px;               /* Space between video containers */
+    gap: 40px 40px;               /* Space between video containers */
     margin: 0 auto;          /* Centers gallery on the page */
-    padding: 100px;           /* Adds padding around the gallery */
+    padding: 20px;           /* Adds padding around the gallery */
     justify-content: center; /* Center gallery content */
     align-items: flex-start; /* Align videos at the top of each row */
-    margin-top: 20vh;
+    margin-top: 1vh;
 }
-
-/* Each video container settings */
-.video-works {
-    /*flex: 1 1 45%;          /* Two videos per row; adjust to 30% for three per row */
-    flex-basis: 45%;
-    max-width: 600px;       /* Limit width of each video for consistency */
-    position: relative;     /* Ensure positioning stays within container */
-    box-sizing: border-box;
-    padding: 10px;          /* Optional: space inside each container */
-}
-
-/* Image element settings */
-.video-works img {
-    width: 100%;            /* Full width in each container */
-    height: auto;           /* Maintain aspect ratio */
-    display: block;
-    border-radius: 8px;     /* Optional: rounded corners */
-}
-
-/* Video element settings */
-.video-works video {
-    width: 100%;            /* Full width in each container */
-    height: auto;           /* Maintain aspect ratio */
-    display: block;
-    border-radius: 8px;     /* Optional: rounded corners */
-}
-
-.video-caption {
-  position: absolute; /* Posiciona el caption sobre el video */
-  font: inherit;
-  top: 30px;      /* Ajusta la distancia desde la parte superior */
-  left: 10px;        /* Ajusta la distancia desde la izquierda */
-  z-index: 10;       /* AsegÃƒÂºrate de que estÃƒÂ© por encima del video */
-  padding: 5px;      /* Espaciado alrededor del texto */
-  border-radius: 5px; /* Esquinas redondeadas */
-}
-
-
-
-
-
-
 
 
 
@@ -3643,3 +3602,20 @@ left: -35px;
 .owl-carousel:hover .owl-next {
 right: -35px;
 }
+
+
+
+
+.project-item {
+    position: relative;
+    width: 600px;
+    background-color: transparent;
+}
+
+.project-item img {
+    position: relative;
+    width: 600px;
+    object-fit: cover;
+}
+
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematics @anevenua</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script>
+            // JavaScript code to image expansion
+            document.addEventListener('DOMContentLoaded', function() {
+                const images = document.querySelectorAll('.gallery img');
+
+                images.forEach(img => {
+                  img.style.cursor = 'pointer';
+                  img.addEventListener('click', () => {
+                    const fullResImgSrc = img.src;
+                    const modal = document.createElement('div');
+                    modal.id = 'imageModal';
+                    modal.style.position = 'fixed';
+                    modal.style.top = '0';
+                    modal.style.left = '0';
+                    modal.style.width = '100%';
+                    modal.style.height = '100%';
+                    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                    modal.style.display = 'flex';
+                    modal.style.justifyContent = 'center';
+                    modal.style.alignItems = 'center';
+                    modal.style.zIndex = '1000';
+
+                    const modalImg = document.createElement('img');
+                    modalImg.src = fullResImgSrc;
+                    modalImg.alt = img.alt;
+                    modalImg.style.maxWidth = '90%';
+                    modalImg.style.maxHeight = '90%';
+                    modalImg.style.objectFit = 'contain';
+
+                    modal.appendChild(modalImg);
+                    document.body.appendChild(modal);
+
+                    modal.addEventListener('click', (event) => {
+                      if (event.target === modal) {
+                        modal.remove();
+                      }
+                    });
+                  });
+                });
+            });
+        </script>
+
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        header {
+            width: 100vw;
+            height: 100vh;
+            background: url('img/headers/cinematics.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 10rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        main {
+            padding: 20px;
+        }
+        video {
+            width: 80%;
+            max-width: 1920px;
+            margin: 20px 0;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 45%;
+            max-width: 600px;
+            height: auto;
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        h2 {
+            font-weight: 300;
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CINEMATICS</h1>
+        <h2>Star Wars x anevenua I 2024</h2>
+    </header>
+    <section class="description">
+  <p><br>Result of Unreal Engine 5 initial course by Bad Desitions Studio.
+    </p>
+</section>
+    <main>
+        <video controls>
+            <source src="videos/video6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="gallery">
+            <img src="img/projects/cinematics_1.jpg" alt="Project Image 1">
+            <img src="img/projects/cinematics_2.jpg" alt="Project Image 2">
+            <img src="img/projects/cinematics_3.jpg" alt="Project Image 3">
+            <img src="img/projects/cinematics_4.jpg" alt="Project Image 4">
+        </div>
+    </main>
+    <footer>
+        <a href="current.html" class="prev">&larr; </a>
+        <a href="neon-dreams.html" class="next"> &rarr;</a>
+    </footer>
+
+</body>
+</html>
