@@ -2407,12 +2407,9 @@ filter: alpha(opacity=75);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;         /* Allows items to move to new rows */
-    gap: 40px 40px;               /* Space between video containers */
-    margin: 0 auto;          /* Centers gallery on the page */
     padding: 20px;           /* Adds padding around the gallery */
     justify-content: center; /* Center gallery content */
     align-items: flex-start; /* Align videos at the top of each row */
-    margin-top: 1vh;
 }
 
 
@@ -3608,13 +3605,16 @@ right: -35px;
 
 .project-item {
     position: relative;
-    width: 600px;
+    width: 50%;
+    height: auto;
     background-color: transparent;
+    padding: 10px;
 }
 
 .project-item img {
     position: relative;
-    width: 600px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
 }
 
