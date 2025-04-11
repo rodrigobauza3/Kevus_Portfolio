@@ -2899,7 +2899,7 @@ width: 57px;
 height: 34px;
 margin: 137px auto 30px auto;
 cursor: pointer;
-background: url(../img/logo-dark-mobile.png) no-repeat;
+background: url(...img/logo-dark-mobile.png) no-repeat;
 }
 
 @media only screen and (max-width: 880px) {
@@ -2935,7 +2935,7 @@ list-style-type: none;
 .social-icons-footer-wrapper ul li {
 display: inline;
 margin: 0 auto;
-padding: 0;
+padding: 10px;
 }
 
 ul.social-icons-footer {
